@@ -415,26 +415,26 @@ export function LandingPage() {
                 >
                   {/* Background Image */}
                   {session.img && (
-                    <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100 transition-opacity duration-500 ease-out">
+                    <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 group-focus:opacity-60 group-active:opacity-60 transition-opacity duration-500 ease-out">
                       <ImageWithFallback
                         src={session.img}
                         alt={session.speaker}
-                        className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${index === 2 ? "object-center" : "object-[center_20%]"}`}
+                        className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-focus:scale-105 group-active:scale-105 ${index === 2 ? "object-center" : "object-[center_20%]"}`}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF7F5]/90 to-[#FAF7F5]/70 group-hover:from-[#8A5A53]/85 group-hover:to-[#D68C82]/75 transition-colors duration-500 mix-blend-multiply" />
-                      <div className="absolute inset-0 bg-[#FAF7F5]/50 group-hover:bg-[#8A5A53]/40 transition-colors duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF7F5]/90 to-[#FAF7F5]/70 mix-blend-multiply" />
+                      <div className="absolute inset-0 bg-[#FAF7F5]/50" />
                     </div>
                   )}
 
                   {/* Content */}
                   <div className="relative z-10 flex flex-col justify-between h-full min-h-[260px] md:min-h-[280px] p-6 md:p-8 lg:p-10">
                     <div className="flex items-center justify-between w-full mb-8 md:mb-10">
-                      <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 bg-white group-hover:bg-white/20 group-focus:bg-white/20 group-active:bg-white/20 text-[#D68C82] group-hover:text-white group-focus:text-white group-active:text-white rounded-full flex items-center justify-center text-lg md:text-xl font-bold tracking-tighter transition-colors duration-300 shadow-sm group-hover:shadow-none">
+                      <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 bg-white text-[#D68C82] rounded-full flex items-center justify-center text-lg md:text-xl font-bold tracking-tighter shadow-sm">
                         {session.week}
                       </div>
 
-                      <div className="bg-white/60 group-hover:bg-white/10 backdrop-blur-md px-4 py-2 md:px-5 md:py-2.5 rounded-full transition-all duration-300 shadow-sm group-hover:shadow-none border border-white/40 group-hover:border-white/20">
-                        <h4 className="text-[#8A5A53] group-hover:text-white font-bold text-sm md:text-base tracking-tight transition-colors duration-300 flex items-center gap-2">
+                      <div className="bg-white/60 backdrop-blur-md px-4 py-2 md:px-5 md:py-2.5 rounded-full shadow-sm border border-white/40">
+                        <h4 className="text-[#8A5A53] font-bold text-sm md:text-base tracking-tight flex items-center gap-2">
                           {index === 2 ? (
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -476,14 +476,14 @@ export function LandingPage() {
                     </div>
 
                     <div className="text-left mt-auto w-full md:w-[85%]">
-                      <h3 className="text-xl md:text-2xl lg:text-[26px] font-bold text-gray-900 group-hover:text-white group-focus:text-white group-active:text-white mb-3 md:mb-4 tracking-tight transition-colors duration-300 drop-shadow-sm group-hover:drop-shadow-md leading-tight">
+                      <h3 className="text-xl md:text-2xl lg:text-[26px] font-bold text-gray-900 mb-3 md:mb-4 tracking-tight leading-tight">
                         {session.title}
                       </h3>
-                      <p className="text-[#6B6661] group-hover:text-white/95 group-focus:text-white/95 group-active:text-white/95 font-light leading-relaxed text-sm md:text-base transition-colors duration-300 drop-shadow-sm group-hover:drop-shadow-md">
+                      <p className="text-[#6B6661] font-light leading-relaxed text-sm md:text-base">
                         {session.desc}
                       </p>
 
-                      <div className="mt-4 pt-4 border-t border-[#D68C82]/20 group-hover:border-white/30 transition-colors duration-300 flex items-center gap-1.5 md:gap-2 text-[#8A5A53] group-hover:text-white font-medium text-xs md:text-sm">
+                      <div className="mt-4 pt-4 border-t border-[#D68C82]/20 flex items-center gap-1.5 md:gap-2 text-[#8A5A53] font-medium text-xs md:text-sm">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="14"
@@ -507,10 +507,10 @@ export function LandingPage() {
                       {/* Bio — 클릭/포커스 시 표시 */}
                       {session.bio.length > 0 && (
                         <div className="max-h-0 overflow-hidden group-hover:max-h-40 group-focus:max-h-40 group-active:max-h-40 transition-all duration-500 ease-out">
-                          <ul className="mt-4 pt-3 border-t border-white/40 space-y-1.5">
+                          <ul className="mt-4 pt-3 border-t border-[#D68C82]/30 space-y-1.5">
                             {session.bio.map((line, i) => (
-                              <li key={i} className="text-white text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2 drop-shadow-sm">
-                                <span className="text-white mt-0.5 flex-shrink-0">·</span>
+                              <li key={i} className="text-[#6B6661] text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2">
+                                <span className="text-[#D68C82] mt-0.5 flex-shrink-0">·</span>
                                 {line}
                               </li>
                             ))}
