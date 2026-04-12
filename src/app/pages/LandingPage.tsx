@@ -365,6 +365,9 @@ export function LandingPage() {
               <br />
               다양한 주제에 대해 교제를 나눕니다.
             </p>
+            <p className="text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mt-3 uppercase">
+              * 박스를 누르면 게스트 상세 정보를 확인할 수 있어요!
+            </p>
           </motion.div>
 
           <motion.div
@@ -382,6 +385,7 @@ export function LandingPage() {
                 desc: "성경적 사랑과 관계의 본질을 탐구하고, 나에게 맞는 인연을 분별하는 영적 지혜를 배웁니다.",
                 img: jangPastorImg,
                 date: "5월 2일 토요일 19시",
+                bio: ["<따라하는 기도> 저자", "팔로잉 미니스트리 대표", "초원 기도하기 개발 참여"],
               },
               {
                 week: "2주차",
@@ -390,6 +394,7 @@ export function LandingPage() {
                 desc: "신앙 안에서의 건강한 연애와 결혼을 이야기합니다.",
                 img: leeSojeongImg,
                 date: "5월 8일 금요일 19시",
+                bio: ["<하나님, 저희 잘 가고 있는 거 맞나요?> 저자", "크리스천 부부 인스타그램 계정 '나는 바보양' 운영"],
               },
               {
                 week: "3주차",
@@ -398,6 +403,7 @@ export function LandingPage() {
                 desc: "앞선 회차에서 다룬 내용을 바탕으로 사랑에 대한 이해를 나누고 교제합니다.",
                 img: "https://images.unsplash.com/photo-1640037984424-ac1a02cb742a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMGNvZmZlZSUyMHNob3AlMjB0b3AlMjB2aWV3JTIwaGFuZHMlMjB0YWJsZXxlbnwxfHx8fDE3NzU4MjU4NDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
                 date: "5월 16일 토요일 19시",
+                bio: [] as string[],
               },
             ].map((session, index) => {
               return (
@@ -497,6 +503,20 @@ export function LandingPage() {
                         </svg>
                         <span>{session.date}</span>
                       </div>
+
+                      {/* Bio — 클릭/포커스 시 표시 */}
+                      {session.bio.length > 0 && (
+                        <div className="max-h-0 overflow-hidden group-hover:max-h-40 group-focus:max-h-40 group-active:max-h-40 transition-all duration-500 ease-out">
+                          <ul className="mt-4 pt-3 border-t border-white/20 space-y-1.5">
+                            {session.bio.map((line, i) => (
+                              <li key={i} className="text-white/90 text-xs md:text-sm font-light leading-relaxed flex items-start gap-2">
+                                <span className="text-white/60 mt-0.5 flex-shrink-0">·</span>
+                                {line}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>
