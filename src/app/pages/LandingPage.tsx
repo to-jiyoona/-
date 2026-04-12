@@ -11,6 +11,7 @@ import {
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import jangPastorImg from "../../assets/jang-pastor.jpg";
 import leeSojeongImg from "../../assets/lee-sojeong.jpg";
+import appLogoImg from "../../assets/앱로고.png";
 
 const fadeInVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -53,6 +54,13 @@ export function LandingPage() {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-[#2D2A26]/50" />
+
+        {/* 앱 로고 - 상단 중앙 고정 */}
+        <img
+          src={appLogoImg}
+          alt="초원 앱 로고"
+          className="absolute top-6 md:top-8 left-1/2 -translate-x-1/2 z-20 w-9 h-9 md:w-11 md:h-11 object-contain drop-shadow-md rounded-xl"
+        />
 
         <motion.div
           initial="hidden"
@@ -591,7 +599,7 @@ export function LandingPage() {
             <ul className="space-y-4 md:space-y-6 text-[#6B6661] font-light text-sm md:text-base">
               {[
                 { label: "참가비", desc: "15만원" },
-                { label: "결제방식", desc: "계좌이체" },
+                { label: "결제방식", desc: "카드결제 (무이자 할부 결제 지원)" },
                 {
                   label: "환불 규정",
                   desc: "4월 26일(일) 23:59까지 전액 환불, 이후 불가",
