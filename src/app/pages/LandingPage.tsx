@@ -365,9 +365,6 @@ export function LandingPage() {
               <br />
               다양한 주제에 대해 교제를 나눕니다.
             </p>
-            <p className="text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mt-3 uppercase">
-              * 박스를 누르면 게스트 상세 정보를 확인할 수 있어요!
-            </p>
           </motion.div>
 
           <motion.div
@@ -410,16 +407,15 @@ export function LandingPage() {
                 <motion.div
                   key={index}
                   variants={fadeInVariant}
-                  tabIndex={0}
-                  className="group relative overflow-hidden w-full max-w-[800px] bg-[#FAF7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] transition-colors duration-300 cursor-pointer focus:outline-none"
+                  className="relative overflow-hidden w-full max-w-[800px] bg-[#FAF7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
                 >
                   {/* Background Image */}
                   {session.img && (
-                    <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 group-focus:opacity-60 group-active:opacity-60 transition-opacity duration-500 ease-out">
+                    <div className="absolute inset-0 z-0 opacity-40">
                       <ImageWithFallback
                         src={session.img}
                         alt={session.speaker}
-                        className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-focus:scale-105 group-active:scale-105 ${index === 2 ? "object-center" : "object-[center_20%]"}`}
+                        className={`w-full h-full object-cover ${index === 2 ? "object-center" : "object-[center_20%]"}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-[#FAF7F5]/90 to-[#FAF7F5]/70 mix-blend-multiply" />
                       <div className="absolute inset-0 bg-[#FAF7F5]/50" />
@@ -504,18 +500,16 @@ export function LandingPage() {
                         <span>{session.date}</span>
                       </div>
 
-                      {/* Bio — 클릭/포커스 시 표시 */}
+                      {/* Bio — 항상 노출 */}
                       {session.bio.length > 0 && (
-                        <div className="max-h-0 overflow-hidden group-hover:max-h-40 group-focus:max-h-40 group-active:max-h-40 transition-all duration-500 ease-out">
-                          <ul className="mt-4 pt-3 border-t border-[#D68C82]/30 space-y-1.5">
-                            {session.bio.map((line, i) => (
-                              <li key={i} className="text-[#6B6661] text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2">
-                                <span className="text-[#D68C82] mt-0.5 flex-shrink-0">·</span>
-                                {line}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                        <ul className="mt-4 pt-3 border-t border-[#D68C82]/30 space-y-1.5">
+                          {session.bio.map((line, i) => (
+                            <li key={i} className="text-[#6B6661] text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2">
+                              <span className="text-[#D68C82] mt-0.5 flex-shrink-0">·</span>
+                              {line}
+                            </li>
+                          ))}
+                        </ul>
                       )}
                     </div>
                   </div>
