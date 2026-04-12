@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FAF7F5;
+  --color-foreground: #2D2A26;
+  --color-primary: #D68C82;
+  --color-primary-foreground: #ffffff;
+  --color-muted: #6B6661;
+  --color-border: rgba(214, 140, 130, 0.2);
+  --font-pretendard: Pretendard, -apple-system, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --font-nanumbrush: "Nanum Brush Script", cursive;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: var(--font-pretendard);
+    background-color: #FAF7F5;
+    color: #2D2A26;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .font-nanumbrush {
+    font-family: var(--font-nanumbrush);
+  }
+}

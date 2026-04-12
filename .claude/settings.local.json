@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -o \"Online Community Signup Site.zip\" -d \"Online Community Signup Site\")",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(curl -s http://localhost:5173)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx vite:*)",
+      "Bash(grep -E \"\\\\.png$|\\\\.jpg$|\\\\.jpeg$\")",
+      "Bash(mdfind -name \"장재기\")",
+      "Bash(mdfind \"kMDItemDisplayName == '*목사*'\")",
+      "Bash(mdfind \"kMDItemDisplayName == '*Pastor*'\")",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(python3)",
+      "Bash(grep -r \"Chevron\\\\|IconLeft\\\\|CustomComponents\" node_modules/react-day-picker/dist/*.d.ts)"
+    ]
+  }
+}
