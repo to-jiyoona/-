@@ -507,10 +507,10 @@ export function LandingPage() {
                       {/* Bio — 클릭/포커스 시 표시 */}
                       {session.bio.length > 0 && (
                         <div className="max-h-0 overflow-hidden group-hover:max-h-40 group-focus:max-h-40 group-active:max-h-40 transition-all duration-500 ease-out">
-                          <ul className="mt-4 pt-3 border-t border-white/20 space-y-1.5">
+                          <ul className="mt-4 pt-3 border-t border-white/40 space-y-1.5">
                             {session.bio.map((line, i) => (
-                              <li key={i} className="text-white/90 text-xs md:text-sm font-light leading-relaxed flex items-start gap-2">
-                                <span className="text-white/60 mt-0.5 flex-shrink-0">·</span>
+                              <li key={i} className="text-white text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2 drop-shadow-sm">
+                                <span className="text-white mt-0.5 flex-shrink-0">·</span>
                                 {line}
                               </li>
                             ))}
