@@ -99,7 +99,7 @@ export function LandingPage() {
           </motion.h1>
         </motion.div>
 
-        {/* Scroll down indicator */}
+        {/* Scroll down indicator - 버튼 + 텍스트 + 화살표 */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -108,16 +108,24 @@ export function LandingPage() {
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             className="flex flex-col items-center gap-4"
           >
+            <motion.a
+              href="https://forms.gle/ovbNhNhxhpkrzBu77"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-5 text-base md:text-lg font-bold text-white bg-[#D68C82] hover:bg-[#C27A71] rounded-full overflow-hidden transition-colors shadow-xl shadow-[#D68C82]/30"
+            >
+              <span className="relative flex items-center gap-2 md:gap-3 tracking-wide">
+                바로 신청하기
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+              </span>
+            </motion.a>
             <p className="text-sm md:text-base font-light text-white/95 whitespace-pre-line text-center leading-[1.6] drop-shadow-md">
-              기도로 기다려온 만남,{"\n"}그 첫걸음을 시작해
-              볼까요?
+              기도로 기다려온 만남,{"\n"}그 첫걸음을 시작해 볼까요?
             </p>
             <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
               <ArrowDown className="w-4 h-4 text-white/95 stroke-[2]" />
@@ -652,9 +660,14 @@ export function LandingPage() {
                 </div>
               ))}
             </div>
+
+            <p className="mt-6 text-center text-sm md:text-base text-[#6B6661] font-medium">
+              *오프라인 프로그램 구성은 2회차 마무리 후 별도 공지 예정입니다.
+            </p>
           </motion.div>
         </div>
       </section>
+
       <section className="py-16 md:py-28 px-6 bg-[#FAF7F5] overflow-hidden">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 lg:gap-24">
           <motion.div
@@ -695,7 +708,7 @@ export function LandingPage() {
               <br />
               식사비용 10만원 지원
             </h2>
-            <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] mb-4 md:mb-6 font-light text-center">
+            <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] mb-4 md:mb-6 font-light text-center md:text-left">
               마지막 회차 종료후 설문을 통해
               <br />더 알아가고 싶은 분을 선택하게됩니다.
               <br />
@@ -750,7 +763,7 @@ export function LandingPage() {
                 { label: "결제방식", desc: "카드결제 (무이자 할부 결제 지원)" },
                 {
                   label: "환불 규정",
-                  desc: "4월 26일(일) 23:59까지 전액 환불, 이후 불가",
+                  desc: "4월 25일(토) 23:59까지 전액 환불, 이후 불가",
                 },
                 {
                   label: "No-Show 패널티",
@@ -809,9 +822,11 @@ export function LandingPage() {
 
           <div className="bg-white/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-5 rounded-2xl mb-8 md:mb-12 border border-[#D68C82]/30 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
             <p className="text-[13px] md:text-base text-[#8A5A53] font-medium leading-relaxed">
-              결제 시 나이, 직업, 프로필 사진, 키, 가치관 등에 대한 설문이 있으며
+              결제 시 나이, 직업, 키, 출석 교회, 모태신앙 여부,
               <br />
-              초원지기들이 꼼꼼히 확인 후 매칭할 예정입니다.
+              그리고 세부 가치관 등 정보를 수집하여
+              <br />
+              초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
             </p>
           </div>
 
