@@ -378,6 +378,7 @@ export function LandingPage() {
             {[
               {
                 week: "1주차",
+                mode: "온라인",
                 speaker: "장재기 목사님",
                 title: "하나님이 디자인하신 사랑과 관계",
                 desc: "성경적 사랑과 관계의 본질을 탐구하고, 나에게 맞는 인연을 분별하는 영적 지혜를 배웁니다.",
@@ -387,7 +388,8 @@ export function LandingPage() {
               },
               {
                 week: "2주차",
-                speaker: "나는바보양님",
+                mode: "온라인",
+                speaker: "이소정 작가님",
                 title: "크리스천의 연애와 결혼",
                 desc: "신앙 안에서의 건강한 연애와 결혼을 이야기합니다.",
                 img: leeSojeongImg,
@@ -396,12 +398,13 @@ export function LandingPage() {
               },
               {
                 week: "3주차",
+                mode: "오프라인",
                 speaker: "지윤 (호스트)",
-                title: "사랑에 한 걸음 가까이",
-                desc: "앞선 회차에서 다룬 내용을 바탕으로 사랑에 대한 이해를 나누고 교제합니다.",
+                title: "한 걸음 더 가까이",
+                desc: "여러가지 발제문을 두고 남녀 참가자가 로테이션으로 교제합니다.",
                 img: "https://images.unsplash.com/photo-1640037984424-ac1a02cb742a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMGNvZmZlZSUyMHNob3AlMjB0b3AlMjB2aWV3JTIwaGFuZHMlMjB0YWJsZXxlbnwxfHx8fDE3NzU4MjU4NDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
                 date: "5월 16일 토요일 19시",
-                bio: [] as string[],
+                bio: ["모임 장소는 서울 용산, 강남, 성수 중 선정하여 별도 공지 예정입니다."],
               },
             ].map((session, index) => {
               return (
@@ -499,6 +502,9 @@ export function LandingPage() {
                           <line x1="3" x2="21" y1="10" y2="10" />
                         </svg>
                         <span>{session.date}</span>
+                        <span className="ml-2 px-2 py-0.5 bg-[#D68C82]/10 text-[#D68C82] rounded-full text-xs font-semibold uppercase tracking-wide">
+                          {session.mode}
+                        </span>
                       </div>
 
                       {/* Bio — 항상 노출 */}
@@ -532,7 +538,7 @@ export function LandingPage() {
             className="w-full mt-16 md:mt-24 pt-12 md:pt-16 border-t border-[#E8DDD8]"
           >
             <h3 className="text-center text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mb-4 md:mb-6 block uppercase">
-              매 회차 프로그램 진행순서
+              온라인 프로그램 진행 순서
             </h3>
             
             {/* Desktop: Horizontal Layout */}
@@ -795,11 +801,9 @@ export function LandingPage() {
 
           <div className="bg-white/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-5 rounded-2xl mb-8 md:mb-12 border border-[#D68C82]/30 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
             <p className="text-[13px] md:text-base text-[#8A5A53] font-medium leading-relaxed">
-              본 프로그램은 초원이 봄을 맞이하여 준비한
+              결제 시 나이, 직업, 프로필 사진, 키, 가치관 등에 대한 설문이 있으며
               <br />
-              파일럿 프로젝트로 추가 진행 여부는 미정이며,
-              <br />
-              조기 마감될 수 있습니다.
+              초원지기들이 꼼꼼히 확인 후 매칭할 예정입니다.
             </p>
           </div>
 
