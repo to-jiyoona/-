@@ -13,6 +13,7 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import jangPastorImg from "../../assets/jang-pastor.jpg";
 import leeSojeongImg from "../../assets/lee-sojeong.jpg";
 import appLogoImg from "../../assets/앱로고.png";
+import minJoonImg from "../../assets/민준0678.jpg";
 
 const fadeInVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -227,36 +228,43 @@ export function LandingPage() {
               ease: [0.23, 1, 0.32, 1],
               delay: 0.2,
             }}
-            className="w-full relative mt-4 md:mt-8 flex items-center justify-center min-h-[400px] md:min-h-[500px]"
+            className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16"
           >
-            <div className="absolute inset-0 bg-[#D68C82]/10 rounded-[2rem] transform translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6" />
-            <div className="relative z-10 w-full h-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-video rounded-[2rem] overflow-hidden shadow-lg group">
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1763527704731-08d89c8c6e45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGNvdXBsZSUyMGZhY2VsZXNzJTIwb3V0ZG9vcnMlMjB3YXJtfGVufDF8fHx8MTc3NTgyMjM3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')",
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-[#2D2A26]/50" />
-
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-10 text-center bg-[#3a393954]">
-                <p className="text-sm sm:text-base md:text-lg leading-[1.8] text-white/95 font-light drop-shadow-md">
-                  <strong className="font-semibold text-[#FFD6D1]">
-                    신앙 안에서 사랑을 소망하는
-                  </strong>{" "}
-                  크리스천 청년들을 위해
-                  <br />
-                  초원이 새로운 만남의 장을 엽니다.
-                  <br />
-                  <br />
-                  3주간 사랑의 의미를 신앙적으로 탐구, 교류하며
-                  <br />
-                  <strong className="font-semibold text-[#FFD6D1]">
-                    소중한 인연을 발견하는 여정을 함께합니다.
-                  </strong>
-                </p>
+            {/* Image Section */}
+            <div className="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center md:items-start">
+              <div className="relative max-w-[300px] md:max-w-none">
+                <div className="absolute inset-0 bg-[#D68C82]/10 rounded-[2rem] transform translate-x-4 translate-y-4" />
+                <div className="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg group">
+                  <ImageWithFallback
+                    src={minJoonImg}
+                    alt="신앙 안에서 사랑을 소망하는 크리스천 청년"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#E8D4C8]/25 via-transparent to-[#D4A89F]/15 mix-blend-multiply" />
+                </div>
               </div>
+              {/* Mobile name tag */}
+              <div className="md:hidden mt-6 text-center">
+                <p className="text-base md:text-lg font-bold text-[#D68C82] tracking-wide">초원대표 김민준</p>
+              </div>
+            </div>
+
+            {/* Text Section */}
+            <div className="w-full md:w-1/2 flex flex-col text-center md:text-left">
+              {/* Desktop name tag */}
+              <div className="hidden md:block mb-6">
+                <p className="text-lg font-bold text-[#D68C82] tracking-wide">초원대표 김민준</p>
+              </div>
+              <p className="text-base sm:text-lg md:text-xl leading-[1.9] md:leading-[1.95] text-[#2D2A26] font-light whitespace-pre-line">
+                "{`저 역시 신앙 안에서 사랑을 소망하는
+한 크리스천 청년으로서
+진중한 마음으로 새로운 만남의 장을 엽니다.
+
+3주간 사랑의 의미를 신앙적으로 탐구, 교류하며
+`}<strong className="font-semibold text-[#D68C82]">
+                  소중한 인연을 발견하는 여정에 여러분을 초대합니다.
+                </strong>{`"`}
+              </p>
             </div>
           </motion.div>
         </div>
