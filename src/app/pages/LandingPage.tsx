@@ -536,7 +536,7 @@ export function LandingPage() {
             </h3>
             
             {/* Desktop: Horizontal Layout */}
-            <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
+            <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
               {[
                 {
                   icon: <Mic className="w-8 h-8" />,
@@ -557,10 +557,10 @@ export function LandingPage() {
                   desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다.",
                 },
               ].map((step, index) => (
-                <div key={index} className="flex items-center gap-6 lg:gap-8 flex-1">
+                <div key={index} className="relative flex flex-col items-center">
                   <motion.div
                     variants={fadeInVariant}
-                    className="flex-1 bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-[#F2EBE9] text-center"
+                    className="w-full bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-[#F2EBE9] text-center min-h-[320px] lg:min-h-[340px] flex flex-col items-center justify-center"
                   >
                     <div className="w-12 h-12 lg:w-14 lg:h-14 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-5 text-[#D68C82] flex-shrink-0">
                       {step.icon}
@@ -577,7 +577,7 @@ export function LandingPage() {
                   </motion.div>
                   
                   {index < 2 && (
-                    <div className="flex-shrink-0">
+                    <div className="absolute -right-7 lg:-right-8 top-1/2 transform -translate-y-1/2">
                       <svg className="w-6 h-6 lg:w-8 lg:h-8 text-[#D68C82]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                       </svg>
