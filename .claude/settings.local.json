@@ -14,7 +14,10 @@
       "Bash(pip3 install:*)",
       "Bash(python3 -c \"from PIL import Image; print\\('ok'\\)\")",
       "Bash(python3)",
-      "Bash(grep -r \"Chevron\\\\|IconLeft\\\\|CustomComponents\" node_modules/react-day-picker/dist/*.d.ts)"
+      "Bash(grep -r \"Chevron\\\\|IconLeft\\\\|CustomComponents\" node_modules/react-day-picker/dist/*.d.ts)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

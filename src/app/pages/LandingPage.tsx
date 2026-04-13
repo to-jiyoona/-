@@ -7,6 +7,7 @@ import {
   Monitor,
   Check,
   ArrowRight,
+  Mic,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import jangPastorImg from "../../assets/jang-pastor.jpg";
@@ -81,8 +82,8 @@ export function LandingPage() {
             variants={heroFadeVariant}
             className="flex flex-col items-center"
           >
-            <span className="text-xs sm:text-sm tracking-[0.4em] uppercase mb-4 md:mb-6 opacity-90 border-b border-white/40 pb-2 font-medium">
-              CHOWON PILOT PROGRAM
+            <span className="text-xs sm:text-sm tracking-[-0.63px] uppercase mb-4 md:mb-6 opacity-90 border-b border-white/40 pb-2 font-medium">
+              초원 80만 유저의 기도와 고민에서 시작된
             </span>
             <p className="text-base sm:text-lg md:text-2xl font-light opacity-95 leading-relaxed drop-shadow mb-3 md:mb-5">
               신앙 안에서 인연을 찾아가는 특별한 여정
@@ -93,7 +94,7 @@ export function LandingPage() {
             variants={heroFadeVariant}
             className="font-nanumbrush font-normal tracking-normal leading-[1.2] drop-shadow-lg mt-2 md:mt-4 text-[#D68C82] text-[64px]"
           >
-            만나, 봄
+            초원 메이트
           </motion.h1>
         </motion.div>
 
@@ -161,11 +162,11 @@ export function LandingPage() {
               </span>
             </h2>
             <p className="text-[#6B6661] text-base md:text-lg leading-[1.8] font-light text-center mb-10 md:mb-12">
-              나와 같은 곳을 바라보며 기도로 함께 걸어갈 동역자.
+              초원의밤, 초원 질문하기 고민 1위는 연애와 결혼.
               <br />
-              누구나 꿈꾸는 아름다운 만남이지만
+              현 시대의 크리스천 청년들은 배우자에 대해
               <br />
-              현실의 벽 앞에서 우리는 주저하게 됩니다.
+              끊임없이 고민과 기도를 거듭하며 살아갑니다.
             </p>
 
             <div className="w-full flex flex-col gap-5 md:gap-7 mt-2 max-w-2xl mx-auto">
@@ -294,12 +295,12 @@ export function LandingPage() {
             {[
               {
                 icon: <Monitor className="w-7 h-7" />,
-                title: "온라인 모임",
+                title: "온/오프라인 결합 프로그램",
                 desc: (
                   <>
-                    전 회차 ZOOM 온라인 진행으로 장소 제한없이,
+                    1-2회차는 ZOOM으로, 3회차 오프라인 모임으로
                     <br />
-                    대면의 부담없이 교제합니다.
+                    점진적으로 가까워지는 교제의 장을 만듭니다.
                   </>
                 ),
               },
@@ -517,10 +518,129 @@ export function LandingPage() {
               );
             })}
           </motion.div>
+
+          {/* Program Flow Diagram */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{
+              duration: 1.2,
+              ease: [0.23, 1, 0.32, 1],
+              delay: 0.3,
+            }}
+            className="w-full mt-16 md:mt-24 pt-12 md:pt-16 border-t border-[#E8DDD8]"
+          >
+            <h3 className="text-center text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mb-4 md:mb-6 block uppercase">
+              매 회차 프로그램 진행순서
+            </h3>
+            
+            {/* Desktop: Horizontal Layout */}
+            <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
+              {[
+                {
+                  icon: <Mic className="w-8 h-8" />,
+                  title: "강연",
+                  time: "30분",
+                  desc: "게스트의 강연으로\n마음의 기초를 다집니다.",
+                },
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "소그룹 교제",
+                  time: "60분",
+                  desc: "발제문을 가지고\n소그룹끼리 진솔한 대화를 통해\n서로를 깊이 이해합니다.",
+                },
+                {
+                  icon: <Check className="w-8 h-8" />,
+                  title: "마무리",
+                  time: "10분",
+                  desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다.",
+                },
+              ].map((step, index) => (
+                <div key={index} className="flex items-center gap-6 lg:gap-8 flex-1">
+                  <motion.div
+                    variants={fadeInVariant}
+                    className="flex-1 bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-[#F2EBE9] text-center"
+                  >
+                    <div className="w-12 h-12 lg:w-14 lg:h-14 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-5 text-[#D68C82] flex-shrink-0">
+                      {step.icon}
+                    </div>
+                    <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">
+                      {step.title}
+                    </h4>
+                    <p className="text-[#D68C82] font-medium text-base lg:text-lg mb-3 lg:mb-4">
+                      {step.time}
+                    </p>
+                    <p className="text-[#6B6661] text-sm lg:text-base font-light leading-relaxed whitespace-pre-line">
+                      {step.desc}
+                    </p>
+                  </motion.div>
+                  
+                  {index < 2 && (
+                    <div className="flex-shrink-0">
+                      <svg className="w-6 h-6 lg:w-8 lg:h-8 text-[#D68C82]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile: Vertical Layout */}
+            <div className="flex md:hidden flex-col items-stretch gap-4">
+              {[
+                {
+                  icon: <Mic className="w-7 h-7" />,
+                  title: "강연",
+                  time: "30분",
+                  desc: "게스트의 강연으로\n마음의 기초를 다집니다.",
+                },
+                {
+                  icon: <Users className="w-7 h-7" />,
+                  title: "소그룹 교제",
+                  time: "60분",
+                  desc: "발제문을 가지고\n소그룹끼리 진솔한 대화를 통해\n서로를 깊이 이해합니다.",
+                },
+                {
+                  icon: <Check className="w-7 h-7" />,
+                  title: "마무리",
+                  time: "10분",
+                  desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다.",
+                },
+              ].map((step, index) => (
+                <div key={index} className="flex flex-col items-stretch">
+                  <motion.div
+                    variants={fadeInVariant}
+                    className="bg-white rounded-xl p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] border border-[#F2EBE9] text-center"
+                  >
+                    <div className="w-11 h-11 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-3 text-[#D68C82] flex-shrink-0">
+                      {step.icon}
+                    </div>
+                    <h4 className="text-base font-semibold text-gray-900 mb-1.5">
+                      {step.title}
+                    </h4>
+                    <p className="text-[#D68C82] font-medium text-sm mb-2">
+                      {step.time}
+                    </p>
+                    <p className="text-[#6B6661] text-xs font-light leading-relaxed whitespace-pre-line">
+                      {step.desc}
+                    </p>
+                  </motion.div>
+                  
+                  {index < 2 && (
+                    <div className="flex justify-center py-3">
+                      <svg className="w-5 h-5 text-[#D68C82]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
-
-      {/* 5. Connection System */}
       <section className="py-16 md:py-28 px-6 bg-[#FAF7F5] overflow-hidden">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 lg:gap-24">
           <motion.div
@@ -668,7 +788,7 @@ export function LandingPage() {
             첫걸음을 내딛으세요
           </h2>
           <p className="text-base md:text-xl text-[#6B6661] mb-8 md:mb-10 font-light leading-relaxed px-4 md:px-0">
-            초원의 새로운 프로젝트 &lt;만나, 봄&gt;은
+            초원의 새로운 프로젝트 &lt;초원 메이트&gt;는
             <br />
             신앙 안에서 사랑을 꿈꾸는 당신을 초대합니다.
           </p>
