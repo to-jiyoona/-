@@ -660,6 +660,10 @@ export function LandingPage() {
                 </div>
               ))}
             </div>
+
+            <p className="mt-8 text-center text-sm md:text-base text-[#8A5A53] font-medium">
+              *오프라인 프로그램 구성은 2회차 마무리 후 별도 공지 예정입니다.
+            </p>
           </motion.div>
         </div>
       </section>
