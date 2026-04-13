@@ -787,67 +787,67 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* 7. CTA */}
-      <section className="py-20 md:py-36 px-6 text-center relative overflow-hidden flex items-center justify-center min-h-[50vh] md:min-h-[60vh] bg-[#FAF7F5]">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" />
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
-          variants={fadeInVariant}
-          className="relative z-10 max-w-4xl mx-auto flex flex-col items-center"
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-[44px] font-bold text-gray-900 mb-4 md:mb-6 leading-[1.3] tracking-tight">
-            지금, 당신의 인연을 향한
-            <br />
-            첫걸음을 내딛으세요
-          </h2>
-          <p className="text-base md:text-xl text-[#6B6661] mb-8 md:mb-10 font-light leading-relaxed px-4 md:px-0">
-            초원의 새로운 프로젝트 &lt;초원 메이트&gt;는
-            <br />
-            신앙 안에서 사랑을 꿈꾸는 당신을 초대합니다.
-          </p>
-
-          <div className="bg-white/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-5 rounded-2xl mb-8 md:mb-12 border border-[#D68C82]/30 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
-            <p className="text-[13px] md:text-base text-[#8A5A53] font-medium leading-relaxed">
-              결제 시 나이, 직업, 키, 출석 교회, 모태신앙 여부,
-              <br />
-              그리고 세부 가치관 등 정보를 수집하여
-              <br />
-              초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
-            </p>
-          </div>
-
-          <motion.a
-            href="https://www.latpeed.com/products/B4Jq4"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-5 text-base md:text-lg font-bold text-white bg-[#D68C82] hover:bg-[#C27A71] rounded-full overflow-hidden transition-colors shadow-xl shadow-[#D68C82]/30 w-full sm:w-auto"
+      {/* FAQ */}
+      <section className="py-16 md:py-28 px-6 bg-[#FAF7F5]">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={fadeInVariant}
+            className="text-center mb-12 md:mb-16"
           >
-            <span className="relative flex items-center gap-2 md:gap-3 tracking-wide">
-              지금 바로 신청하기
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+            <span className="text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mb-2 md:mb-3 block uppercase">
+              FAQ
             </span>
-          </motion.a>
-        </motion.div>
-      </section>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+              자주 묻는 질문
+            </h2>
+          </motion.div>
 
-      {/* Footer */}
-      <footer className="py-10 text-center text-[#999] text-sm bg-white border-t border-[#F2EBE9]">
-        <p className="font-light tracking-wide">
-          © Chowon all rights reserved.
-        </p>
-      </footer>
-    </div>
-  );
-}
+          {[
+            {
+              category: "참가 관련",
+              items: [
+                {
+                  q: "초원성경 앱을 꼭 사용해야 하나요?",
+                  a: "네 맞습니다. 카카오톡으로 3초 로그인 가능하니 가입 후 신청해주세요!",
+                },
+                {
+                  q: "비신자도 참가할 수 있나요?",
+                  a: "본 행사는 크리스천 청년 대상으로, 등록교회가 있으신 경우 초원 가입 후 신청 가능합니다.",
+                },
+                {
+                  q: "정원이 다 차면 어떻게 되나요?",
+                  a: "4월 25일 23:59까지 환불 건 발생 시 추가 모집 예정입니다.",
+                },
+              ],
+            },
+            {
+              category: "일정/진행 관련",
+              items: [
+                {
+                  q: "3번 모임에 모두 참석해야 하나요?",
+                  a: "1-2회차 참석하신 분들에 한해 3회차 오프라인 모임 참석 권한이 부여됩니다.",
+                },
+                {
+                  q: "ZOOM 링크는 언제 공유되나요?",
+                  a: "참가 확정자분들께 별도 문자 안내 예정입니다.",
+                },
+                {
+                  q: "오프라인 장소는 어디인가요?",
+                  a: "2회차 종료 후 참석 대상자분들께 별도 공지 예정입니다.",
+                },
+              ],
+            },
+            {
+              category: "비용 관련",
+              items: [
+                {
+                  q: "참가비 15만원은 언제 결제하나요?",
+                  a: "신청 단계에서 카드 결제로 진행해주시면 됩니다.",
+                },
+                {
+                  q: "카드 할부는 몇 개월까지 가능한가요?",
+                  a: "무이자 12개월 가능합니다.",
+                },
