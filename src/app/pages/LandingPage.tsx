@@ -112,7 +112,7 @@ export function LandingPage() {
             className="flex flex-col items-center gap-4"
           >
             <motion.a
-              href="https://forms.gle/ovbNhNhxhpkrzBu77"
+              href="https://www.latpeed.com/products/B4Jq4"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -660,10 +660,6 @@ export function LandingPage() {
                 </div>
               ))}
             </div>
-
-            <p className="mt-6 text-center text-sm md:text-base text-[#6B6661] font-medium">
-              *오프라인 프로그램 구성은 2회차 마무리 후 별도 공지 예정입니다.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -708,7 +704,7 @@ export function LandingPage() {
               <br />
               식사비용 10만원 지원
             </h2>
-            <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] mb-4 md:mb-6 font-light text-center md:text-left">
+            <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] mb-4 md:mb-6 font-light text-center">
               마지막 회차 종료후 설문을 통해
               <br />더 알아가고 싶은 분을 선택하게됩니다.
               <br />
@@ -831,7 +827,7 @@ export function LandingPage() {
           </div>
 
           <motion.a
-            href="https://forms.gle/ovbNhNhxhpkrzBu77"
+            href="https://www.latpeed.com/products/B4Jq4"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
