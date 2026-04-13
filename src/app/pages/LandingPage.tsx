@@ -851,3 +851,131 @@ export function LandingPage() {
                   q: "카드 할부는 몇 개월까지 가능한가요?",
                   a: "무이자 12개월 가능합니다.",
                 },
+                {
+                  q: "매칭 실패 시 환불이 되나요?",
+                  a: "본 프로그램은 강연 + 네트워킹이 결합된 행사로, 매칭 실패 시 별도 환불은 어렵습니다.",
+                },
+              ],
+            },
+            {
+              category: "매칭 관련",
+              items: [
+                {
+                  q: "매칭은 어떤 기준으로 이루어지나요?",
+                  a: "참가자분들은 연령별 균등하게 밸런스를 맞춰드릴 예정이며, 온라인 소그룹은 랜덤 배정입니다.",
+                },
+                {
+                  q: "식사비 10만원은 어떻게 지급되나요?",
+                  a: "매칭되신 두 분께 연락처 공유 후, 만남 인증샷을 보내주시면 10만원을 지급해드립니다.",
+                },
+              ],
+            },
+            {
+              category: "개인정보 관련",
+              items: [
+                {
+                  q: "내 연락처가 상대방에게 바로 공개되나요?",
+                  a: "아닙니다. 3회차 후 후기 설문을 통해 더 알아가고 싶은 상대를 지목해주시면, 두 분이 서로 상대를 선택한 경우에만 양측의 연락처를 공유해드립니다.",
+                },
+                {
+                  q: "신청 정보는 어디에 사용되나요?",
+                  a: "철저한 보안 아래 프로그램 참석자 밸런스 조정 및 프로그램 제작에만 참고되며, 참가자분들께 별도로 공유되지 않습니다.",
+                },
+              ],
+            },
+          ].map((group, gi) => (
+            <motion.div
+              key={gi}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] as const, delay: gi * 0.05 }}
+              className="mb-10"
+            >
+              <h3 className="text-xs md:text-sm font-bold text-[#D68C82] tracking-widest uppercase mb-4">
+                {group.category}
+              </h3>
+              <div className="flex flex-col gap-3">
+                {group.items.map((item, ii) => (
+                  <div
+                    key={ii}
+                    className="bg-white rounded-2xl px-6 py-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-[#F2EBE9]"
+                  >
+                    <p className="font-semibold text-gray-900 text-sm md:text-base mb-2 leading-snug">
+                      Q. {item.q}
+                    </p>
+                    <p className="text-[#6B6661] font-light text-sm md:text-base leading-relaxed">
+                      {item.a}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* 7. CTA */}
+      <section className="py-20 md:py-36 px-6 text-center relative overflow-hidden flex items-center justify-center min-h-[50vh] md:min-h-[60vh] bg-[#FAF7F5]">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')",
+          }}
+        />
+        <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" />
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeInVariant}
+          className="relative z-10 max-w-4xl mx-auto flex flex-col items-center"
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-[44px] font-bold text-gray-900 mb-4 md:mb-6 leading-[1.3] tracking-tight">
+            지금, 당신의 인연을 향한
+            <br />
+            첫걸음을 내딛으세요
+          </h2>
+          <p className="text-base md:text-xl text-[#6B6661] mb-8 md:mb-10 font-light leading-relaxed px-4 md:px-0">
+            초원의 새로운 프로젝트 &lt;초원 메이트&gt;는
+            <br />
+            신앙 안에서 사랑을 꿈꾸는 당신을 초대합니다.
+          </p>
+
+          <div className="bg-white/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-5 rounded-2xl mb-8 md:mb-12 border border-[#D68C82]/30 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
+            <p className="text-[13px] md:text-base text-[#8A5A53] font-medium leading-relaxed">
+              결제 시 나이, 직업, 키, 출석 교회, 모태신앙 여부,
+              <br />
+              그리고 세부 가치관 등 정보를 수집하여
+              <br />
+              초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
+            </p>
+          </div>
+
+          <motion.a
+            href="https://www.latpeed.com/products/B4Jq4"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-5 text-base md:text-lg font-bold text-white bg-[#D68C82] hover:bg-[#C27A71] rounded-full overflow-hidden transition-colors shadow-xl shadow-[#D68C82]/30 w-full sm:w-auto"
+          >
+            <span className="relative flex items-center gap-2 md:gap-3 tracking-wide">
+              지금 바로 신청하기
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+            </span>
+          </motion.a>
+        </motion.div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 text-center text-[#999] text-sm bg-white border-t border-[#F2EBE9]">
+        <p className="font-light tracking-wide">
+          © Chowon all rights reserved.
+        </p>
+      </footer>
+    </div>
+  );
+}
