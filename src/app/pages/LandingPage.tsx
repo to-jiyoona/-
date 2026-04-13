@@ -708,7 +708,7 @@ export function LandingPage() {
               <br />
               식사비용 10만원 지원
             </h2>
-            <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] mb-4 md:mb-6 font-light text-center">
+            <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] mb-4 md:mb-6 font-light text-center md:text-left">
               마지막 회차 종료후 설문을 통해
               <br />더 알아가고 싶은 분을 선택하게됩니다.
               <br />
