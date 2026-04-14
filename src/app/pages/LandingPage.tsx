@@ -83,17 +83,18 @@ export function LandingPage() {
             variants={heroFadeVariant}
             className="flex flex-col items-center"
           >
-            <span className="text-xs sm:text-sm tracking-[-0.63px] uppercase mb-4 md:mb-6 opacity-90 border-b border-white/40 pb-2 font-medium">
+            <span className="block text-center text-sm sm:text-lg md:text-xl tracking-[-0.63px] uppercase mb-4 md:mb-6 opacity-90 font-medium max-w-[400px] w-full">
               초원 80만 유저의 기도와 고민에서 시작된
             </span>
-            <p className="text-base sm:text-lg md:text-2xl font-light opacity-95 leading-relaxed drop-shadow mb-3 md:mb-5">
+            <div className="w-full max-w-[400px] h-px bg-white/40 mb-4 md:mb-6"></div>
+            <p className="text-center text-lg sm:text-xl md:text-3xl font-normal opacity-95 leading-relaxed drop-shadow mb-3 md:mb-5 max-w-[400px] w-full">
               신앙 안에서 인연을 찾아가는 특별한 여정
             </p>
           </motion.div>
 
           <motion.h1
             variants={heroFadeVariant}
-            className="font-nanumbrush font-normal tracking-normal leading-[1.2] drop-shadow-lg mt-2 md:mt-4 text-[#D68C82] text-[64px]"
+            className="font-yonepick font-normal tracking-normal leading-[1.2] drop-shadow-lg mt-2 md:mt-4 text-[#D68C82] text-[54px]"
           >
             초원 메이트
           </motion.h1>
@@ -917,6 +918,10 @@ export function LandingPage() {
             </motion.div>
           ))}
         </div>
+
+        <p className="text-center text-sm md:text-base text-[#6B6661] font-light mt-8 md:mt-12">
+          이 외 문의사항은 <a href="https://chowon.channel.io" target="_blank" rel="noopener noreferrer" className="font-bold text-[#D68C82]">초원 고객센터</a>로 문의바랍니다.
+        </p>
       </section>
 
       {/* 7. CTA */}

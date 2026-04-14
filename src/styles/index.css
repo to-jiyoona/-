@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'YOnepick-Regular';
+  src: url('../assets/Y_Onepick_FONT/YOnepick-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme {
   --color-background: #FAF7F5;
   --color-foreground: #2D2A26;
@@ -9,6 +16,7 @@
   --color-border: rgba(214, 140, 130, 0.2);
   --font-pretendard: Pretendard, -apple-system, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
   --font-nanumbrush: "Nanum Brush Script", cursive;
+  --font-yonepick: 'YOnepick-Regular', cursive;
 }
 
 @layer base {
@@ -26,5 +34,8 @@
   }
   .font-nanumbrush {
     font-family: var(--font-nanumbrush);
+  }
+  .font-yonepick {
+    font-family: var(--font-yonepick);
   }
 }
