@@ -14,6 +14,7 @@ import jangPastorImg from "../../assets/jang-pastor.jpg";
 import leeSojeongImg from "../../assets/lee-sojeong.jpg";
 import appLogoImg from "../../assets/앱로고.png";
 import minJoonImg from "../../assets/민준0678.jpg";
+import heroBgImg from "../../assets/히어로섹션배경.png";
 
 const fadeInVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -51,7 +52,7 @@ export function LandingPage() {
         <div
           className="absolute inset-0 bg-cover bg-[center_30%]"
           style={{
-            backgroundImage: "url('/src/assets/히어로섹션배경.png')",
+            backgroundImage: `url(${heroBgImg})`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-[#2D2A26]/50" />
