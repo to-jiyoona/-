@@ -49,10 +49,9 @@ export function LandingPage() {
       {/* 1. Main Hero Section */}
       <header className="relative w-full h-screen flex flex-col items-center justify-start pt-[15vh] md:pt-[18vh] text-center overflow-hidden bg-[#FAF7F5]">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-[center_30%]"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')",
+            backgroundImage: "url('/src/assets/히어로섹션배경.png')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-[#2D2A26]/50" />
@@ -252,7 +251,6 @@ export function LandingPage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#E8D4C8]/25 via-transparent to-[#D4A89F]/15 mix-blend-multiply" />
                 </div>
               </div>
-              {/* Mobile name tag */}
               <div className="md:hidden mt-6 text-center">
                 <p className="text-base md:text-lg font-bold text-[#D68C82] tracking-wide">초원대표 김민준</p>
               </div>
@@ -260,7 +258,6 @@ export function LandingPage() {
 
             {/* Text Section */}
             <div className="w-full md:w-1/2 flex flex-col text-center md:text-left">
-              {/* Desktop name tag */}
               <div className="hidden md:block mb-6">
                 <p className="text-lg font-bold text-[#D68C82] tracking-wide">초원대표 김민준</p>
               </div>
@@ -430,7 +427,6 @@ export function LandingPage() {
                   variants={fadeInVariant}
                   className="relative overflow-hidden w-full max-w-[800px] bg-[#FAF7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
                 >
-                  {/* Background Image */}
                   {session.img && (
                     <div className="absolute inset-0 z-0 opacity-40">
                       <ImageWithFallback
@@ -443,46 +439,22 @@ export function LandingPage() {
                     </div>
                   )}
 
-                  {/* Content */}
                   <div className="relative z-10 flex flex-col justify-between h-full min-h-[260px] md:min-h-[280px] p-6 md:p-8 lg:p-10">
                     <div className="flex items-center justify-between w-full mb-8 md:mb-10">
                       <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 bg-white text-[#D68C82] rounded-full flex items-center justify-center text-lg md:text-xl font-bold tracking-tighter shadow-sm">
                         {session.week}
                       </div>
-
                       <div className="bg-white/60 backdrop-blur-md px-4 py-2 md:px-5 md:py-2.5 rounded-full shadow-sm border border-white/40">
                         <h4 className="text-[#8A5A53] font-bold text-sm md:text-base tracking-tight flex items-center gap-2">
                           {index === 2 ? (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="opacity-80"
-                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
                               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                               <circle cx="9" cy="7" r="4"></circle>
                               <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
                           ) : (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="opacity-80"
-                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
                               <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                               <circle cx="12" cy="7" r="4" />
                             </svg>
@@ -499,20 +471,8 @@ export function LandingPage() {
                       <p className="text-[#6B6661] font-light leading-relaxed text-sm md:text-base">
                         {session.desc}
                       </p>
-
                       <div className="mt-4 pt-4 border-t border-[#D68C82]/20 flex items-center gap-1.5 md:gap-2 text-[#8A5A53] font-medium text-xs md:text-sm">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="14"
-                          height="14"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="md:w-4 md:h-4"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-4 md:h-4">
                           <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
                           <line x1="16" x2="16" y1="2" y2="6" />
                           <line x1="8" x2="8" y1="2" y2="6" />
@@ -523,8 +483,6 @@ export function LandingPage() {
                           {session.mode}
                         </span>
                       </div>
-
-                      {/* Bio — 항상 노출 */}
                       {session.bio.length > 0 && (
                         <ul className="mt-4 pt-3 border-t border-[#D68C82]/30 space-y-1.5">
                           {session.bio.map((line, i) => (
@@ -547,58 +505,25 @@ export function LandingPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{
-              duration: 1.2,
-              ease: [0.23, 1, 0.32, 1],
-              delay: 0.3,
-            }}
+            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.3 }}
             className="w-full mt-16 md:mt-24 pt-12 md:pt-16 border-t border-[#E8DDD8]"
           >
             <h3 className="text-center text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mb-4 md:mb-6 block uppercase">
               온라인 프로그램 진행 순서
             </h3>
-            
-            {/* Desktop: Horizontal Layout */}
             <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
               {[
-                {
-                  icon: <Mic className="w-8 h-8" />,
-                  title: "강연",
-                  time: "30분",
-                  desc: "게스트의 강연으로\n마음의 기초를 다집니다.",
-                },
-                {
-                  icon: <Users className="w-8 h-8" />,
-                  title: "소그룹 교제",
-                  time: "60분",
-                  desc: "발제문을 가지고\n소그룹끼리 진솔한 대화를 통해\n서로를 깊이 이해합니다.",
-                },
-                {
-                  icon: <Check className="w-8 h-8" />,
-                  title: "마무리",
-                  time: "10분",
-                  desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다.",
-                },
+                { icon: <Mic className="w-8 h-8" />, title: "강연", time: "30분", desc: "게스트의 강연으로\n마음의 기초를 다집니다." },
+                { icon: <Users className="w-8 h-8" />, title: "소그룹 교제", time: "60분", desc: "발제문을 가지고\n소그룹끼리 진솔한 대화를 통해\n서로를 깊이 이해합니다." },
+                { icon: <Check className="w-8 h-8" />, title: "마무리", time: "10분", desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다." },
               ].map((step, index) => (
                 <div key={index} className="relative flex flex-col items-center">
-                  <motion.div
-                    variants={fadeInVariant}
-                    className="w-full bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-[#F2EBE9] text-center min-h-[320px] lg:min-h-[340px] flex flex-col items-center justify-center"
-                  >
-                    <div className="w-12 h-12 lg:w-14 lg:h-14 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-5 text-[#D68C82] flex-shrink-0">
-                      {step.icon}
-                    </div>
-                    <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">
-                      {step.title}
-                    </h4>
-                    <p className="text-[#D68C82] font-medium text-base lg:text-lg mb-3 lg:mb-4">
-                      {step.time}
-                    </p>
-                    <p className="text-[#6B6661] text-sm lg:text-base font-light leading-relaxed whitespace-pre-line">
-                      {step.desc}
-                    </p>
+                  <motion.div variants={fadeInVariant} className="w-full bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-[#F2EBE9] text-center min-h-[320px] lg:min-h-[340px] flex flex-col items-center justify-center">
+                    <div className="w-12 h-12 lg:w-14 lg:h-14 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-5 text-[#D68C82] flex-shrink-0">{step.icon}</div>
+                    <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">{step.title}</h4>
+                    <p className="text-[#D68C82] font-medium text-base lg:text-lg mb-3 lg:mb-4">{step.time}</p>
+                    <p className="text-[#6B6661] text-sm lg:text-base font-light leading-relaxed whitespace-pre-line">{step.desc}</p>
                   </motion.div>
-                  
                   {index < 2 && (
                     <div className="absolute -right-7 lg:-right-8 top-1/2 transform -translate-y-1/2">
                       <svg className="w-6 h-6 lg:w-8 lg:h-8 text-[#D68C82]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -609,48 +534,19 @@ export function LandingPage() {
                 </div>
               ))}
             </div>
-
-            {/* Mobile: Vertical Layout */}
             <div className="flex md:hidden flex-col items-stretch gap-4">
               {[
-                {
-                  icon: <Mic className="w-7 h-7" />,
-                  title: "강연",
-                  time: "30분",
-                  desc: "게스트의 강연으로\n마음의 기초를 다집니다.",
-                },
-                {
-                  icon: <Users className="w-7 h-7" />,
-                  title: "소그룹 교제",
-                  time: "60분",
-                  desc: "발제문을 가지고\n소그룹끼리 진솔한 대화를 통해\n서로를 깊이 이해합니다.",
-                },
-                {
-                  icon: <Check className="w-7 h-7" />,
-                  title: "마무리",
-                  time: "10분",
-                  desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다.",
-                },
+                { icon: <Mic className="w-7 h-7" />, title: "강연", time: "30분", desc: "게스트의 강연으로\n마음의 기초를 다집니다." },
+                { icon: <Users className="w-7 h-7" />, title: "소그룹 교제", time: "60분", desc: "발제문을 가지고\n소그룹끼리 진솔한 대화를 통해\n서로를 깊이 이해합니다." },
+                { icon: <Check className="w-7 h-7" />, title: "마무리", time: "10분", desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다." },
               ].map((step, index) => (
                 <div key={index} className="flex flex-col items-stretch">
-                  <motion.div
-                    variants={fadeInVariant}
-                    className="bg-white rounded-xl p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] border border-[#F2EBE9] text-center"
-                  >
-                    <div className="w-11 h-11 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-3 text-[#D68C82] flex-shrink-0">
-                      {step.icon}
-                    </div>
-                    <h4 className="text-base font-semibold text-gray-900 mb-1.5">
-                      {step.title}
-                    </h4>
-                    <p className="text-[#D68C82] font-medium text-sm mb-2">
-                      {step.time}
-                    </p>
-                    <p className="text-[#6B6661] text-xs font-light leading-relaxed whitespace-pre-line">
-                      {step.desc}
-                    </p>
+                  <motion.div variants={fadeInVariant} className="bg-white rounded-xl p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] border border-[#F2EBE9] text-center">
+                    <div className="w-11 h-11 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-3 text-[#D68C82] flex-shrink-0">{step.icon}</div>
+                    <h4 className="text-base font-semibold text-gray-900 mb-1.5">{step.title}</h4>
+                    <p className="text-[#D68C82] font-medium text-sm mb-2">{step.time}</p>
+                    <p className="text-[#6B6661] text-xs font-light leading-relaxed whitespace-pre-line">{step.desc}</p>
                   </motion.div>
-                  
                   {index < 2 && (
                     <div className="flex justify-center py-3">
                       <svg className="w-5 h-5 text-[#D68C82]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -661,7 +557,6 @@ export function LandingPage() {
                 </div>
               ))}
             </div>
-
             <p className="mt-8 text-center text-sm md:text-base text-[#8A5A53] font-medium">
               *오프라인 프로그램 구성은 2회차 마무리 후 별도 공지 예정입니다.
             </p>
@@ -675,10 +570,7 @@ export function LandingPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{
-              duration: 1.2,
-              ease: [0.23, 1, 0.32, 1],
-            }}
+            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
             className="w-full md:w-1/2"
           >
             <div className="relative">
@@ -694,28 +586,18 @@ export function LandingPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{
-              duration: 1.2,
-              ease: [0.23, 1, 0.32, 1],
-              delay: 0.1,
-            }}
+            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
             className="w-full md:w-1/2 mt-4 md:mt-0"
           >
-            <span className="text-[#D68C82] font-semibold tracking-[0.2em] text-xs md:text-sm mb-3 md:mb-4 block uppercase text-center md:text-left">
-              SPECIAL EVENT
-            </span>
+            <span className="text-[#D68C82] font-semibold tracking-[0.2em] text-xs md:text-sm mb-3 md:mb-4 block uppercase text-center md:text-left">SPECIAL EVENT</span>
             <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-gray-900 mb-6 md:mb-8 leading-[1.3] tracking-tight text-center md:text-left">
-              최종 매칭 성공시
-              <br />
-              식사비용 10만원 지원
+              최종 매칭 성공시<br />식사비용 10만원 지원
             </h2>
             <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] mb-4 md:mb-6 font-light text-center md:text-left">
               마지막 회차 종료후 설문을 통해
               <br />더 알아가고 싶은 분을 선택하게됩니다.
-              <br />
-              최종 매칭에 성공하신 경우,
-              <br />
-              연락처 및 식사 비용 10만원을 지급해드립니다.
+              <br />최종 매칭에 성공하신 경우,
+              <br />연락처 및 식사 비용 10만원을 지급해드립니다.
             </p>
           </motion.div>
         </div>
@@ -731,13 +613,10 @@ export function LandingPage() {
             variants={fadeInVariant}
             className="bg-[#FAF7F5] p-8 md:p-10 lg:p-14 rounded-[2rem] md:rounded-[2.5rem]"
           >
-            <h2 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-900 tracking-tight text-center md:text-left">
-              참가 대상
-            </h2>
+            <h2 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-900 tracking-tight text-center md:text-left">참가 대상</h2>
             <p className="text-base md:text-lg leading-[1.7] md:leading-[1.8] text-[#6B6661] font-light text-center md:text-left">
               신앙 안에서 진지한 관계를 고민하며
-              <br />
-              아름다운 만남을 이루고자 하는
+              <br />아름다운 만남을 이루고자 하는
               <strong className="text-[#D68C82] font-bold text-lg md:text-xl block mt-3 md:mt-4">
                 87~99년생 미혼인 초원성경앱 유저
               </strong>
@@ -748,41 +627,24 @@ export function LandingPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{
-              duration: 1.2,
-              ease: [0.23, 1, 0.32, 1],
-              delay: 0.2,
-            }}
+            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
             className="flex flex-col justify-center"
           >
-            <h2 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-900 tracking-tight text-center md:text-left">
-              참가 안내
-            </h2>
+            <h2 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-900 tracking-tight text-center md:text-left">참가 안내</h2>
             <ul className="space-y-4 md:space-y-6 text-[#6B6661] font-light text-sm md:text-base">
               {[
                 { label: "참가비", desc: "15만원" },
                 { label: "결제방식", desc: "카드결제 (무이자 할부 결제 지원)" },
-                {
-                  label: "환불 규정",
-                  desc: "4월 25일(토) 23:59까지 전액 환불, 이후 불가",
-                },
-                {
-                  label: "No-Show 패널티",
-                  desc: "무단 불참 시 다음 회차 참가 자격 박탈",
-                },
-                {
-                  label: "사전 질문 & 후기",
-                  desc: "회차별 진행 예정.",
-                },
+                { label: "환불 규정", desc: "4월 25일(토) 23:59까지 전액 환불, 이후 불가" },
+                { label: "No-Show 패널티", desc: "무단 불참 시 다음 회차 참가 자격 박탈" },
+                { label: "사전 질문 & 후기", desc: "회차별 진행 예정." },
               ].map((item, i) => (
                 <li key={i} className="flex items-start">
                   <div className="bg-[#FAF7F5] text-[#D68C82] rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center mr-3 md:mr-4 mt-0.5 flex-shrink-0">
                     <Check className="w-3 h-3 md:w-[14px] md:h-[14px] stroke-[3]" />
                   </div>
                   <div className="leading-relaxed">
-                    <strong className="font-semibold text-gray-900 mr-2">
-                      {item.label}:
-                    </strong>
+                    <strong className="font-semibold text-gray-900 mr-2">{item.label}:</strong>
                     {item.desc}
                   </div>
                 </li>
@@ -802,90 +664,47 @@ export function LandingPage() {
             variants={fadeInVariant}
             className="text-center mb-12 md:mb-16"
           >
-            <span className="text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mb-2 md:mb-3 block uppercase">
-              FAQ
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-              자주 묻는 질문
-            </h2>
+            <span className="text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mb-2 md:mb-3 block uppercase">FAQ</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">자주 묻는 질문</h2>
           </motion.div>
 
           {[
             {
               category: "참가 관련",
               items: [
-                {
-                  q: "초원성경 앱을 꼭 사용해야 하나요?",
-                  a: "네 맞습니다. 카카오톡으로 3초 로그인 가능하니 가입 후 신청해주세요!",
-                },
-                {
-                  q: "비신자도 참가할 수 있나요?",
-                  a: "본 행사는 크리스천 청년 대상으로, 등록교회가 있으신 경우 초원 가입 후 신청 가능합니다.",
-                },
-                {
-                  q: "정원이 다 차면 어떻게 되나요?",
-                  a: "4월 25일 23:59까지 환불 건 발생 시 추가 모집 예정입니다.",
-                },
+                { q: "초원성경 앱을 꼭 사용해야 하나요?", a: "네 맞습니다. 카카오톡으로 3초 로그인 가능하니 가입 후 신청해주세요!" },
+                { q: "비신자도 참가할 수 있나요?", a: "본 행사는 크리스천 청년 대상으로, 등록교회가 있으신 경우 초원 가입 후 신청 가능합니다." },
+                { q: "정원이 다 차면 어떻게 되나요?", a: "4월 25일 23:59까지 환불 건 발생 시 추가 모집 예정입니다." },
               ],
             },
             {
               category: "일정/진행 관련",
               items: [
-                {
-                  q: "3번 모임에 모두 참석해야 하나요?",
-                  a: "1-2회차 참석하신 분들에 한해 3회차 오프라인 모임 참석 권한이 부여됩니다.",
-                },
-                {
-                  q: "ZOOM 링크는 언제 공유되나요?",
-                  a: "참가 확정자분들께 별도 문자 안내 예정입니다.",
-                },
-                {
-                  q: "오프라인 장소는 어디인가요?",
-                  a: "2회차 종료 후 참석 대상자분들께 별도 공지 예정입니다.",
-                },
+                { q: "3번 모임에 모두 참석해야 하나요?", a: "1-2회차 참석하신 분들에 한해 3회차 오프라인 모임 참석 권한이 부여됩니다." },
+                { q: "ZOOM 링크는 언제 공유되나요?", a: "참가 확정자분들께 별도 문자 안내 예정입니다." },
+                { q: "오프라인 장소는 어디인가요?", a: "2회차 종료 후 참석 대상자분들께 별도 공지 예정입니다." },
               ],
             },
             {
               category: "비용 관련",
               items: [
-                {
-                  q: "참가비 15만원은 언제 결제하나요?",
-                  a: "신청 단계에서 카드 결제로 진행해주시면 됩니다.",
-                },
-                {
-                  q: "카드 할부는 몇 개월까지 가능한가요?",
-                  a: "무이자 12개월 가능합니다.",
-                },
-                {
-                  q: "매칭 실패 시 환불이 되나요?",
-                  a: "본 프로그램은 강연 + 네트워킹이 결합된 행사로, 매칭 실패 시 별도 환불은 어렵습니다.",
-                },
+                { q: "참가비 15만원은 언제 결제하나요?", a: "신청 단계에서 카드 결제로 진행해주시면 됩니다." },
+                { q: "카드 할부는 몇 개월까지 가능한가요?", a: "무이자 12개월 가능합니다." },
+                { q: "매칭 실패 시 환불이 되나요?", a: "본 프로그램은 강연 + 네트워킹이 결합된 행사로, 매칭 실패 시 별도 환불은 어렵습니다." },
               ],
             },
             {
               category: "매칭 관련",
               items: [
-                {
-                  q: "매칭은 어떤 기준으로 이루어지나요?",
-                  a: "참가자분들은 연령별 균등하게 밸런스를 맞춰드릴 예정이며, 온라인 소그룹은 랜덤 배정입니다.",
-                },
-                {
-                  q: "식사비 10만원은 어떻게 지급되나요?",
-                  a: "매칭되신 두 분께 연락처 공유 후, 만남 인증샷을 보내주시면 10만원을 지급해드립니다.",
-                },
+                { q: "매칭은 어떤 기준으로 이루어지나요?", a: "참가자분들은 연령별 균등하게 밸런스를 맞춰드릴 예정이며, 온라인 소그룹은 랜덤 배정입니다." },
+                { q: "식사비 10만원은 어떻게 지급되나요?", a: "매칭되신 두 분께 연락처 공유 후, 만남 인증샷을 보내주시면 10만원을 지급해드립니다." },
               ],
             },
             {
               category: "개인정보 관련",
               items: [
-                {
-                  q: "내 연락처가 상대방에게 바로 공개되나요?",
-                  a: "아닙니다. 3회차 후 후기 설문을 통해 더 알아가고 싶은 상대를 지목해주시면, 두 분이 서로 상대를 선택한 경우에만 양측의 연락처를 공유해드립니다.",
-                },
-                {
-                  q: "신청 정보는 어디에 사용되나요?",
-                  a: "철저한 보안 아래 프로그램 참석자 밸런스 조정 및 프로그램 제작에만 참고되며, 참가자분들께 별도로 공유되지 않습니다.",
-                },
+                { q: "내 연락처가 상대방에게 바로 공개되나요?", a: "아닙니다. 3회차 후 후기 설문을 통해 더 알아가고 싶은 상대를 지목해주시면, 두 분이 서로 상대를 선택한 경우에만 양측의 연락처를 공유해드립니다." },
+                { q: "신청 정보는 어디에 사용되나요?", a: "철저한 보안 아래 프로그램 참석자 밸런스 조정 및 프로그램 제작에만 참고되며, 참가자분들께 별도로 공유되지 않습니다." },
               ],
             },
           ].map((group, gi) => (
@@ -897,41 +716,33 @@ export function LandingPage() {
               transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] as const, delay: gi * 0.05 }}
               className="mb-10"
             >
-              <h3 className="text-xs md:text-sm font-bold text-[#D68C82] tracking-widest uppercase mb-4">
-                {group.category}
-              </h3>
+              <h3 className="text-xs md:text-sm font-bold text-[#D68C82] tracking-widest uppercase mb-4">{group.category}</h3>
               <div className="flex flex-col gap-3">
                 {group.items.map((item, ii) => (
-                  <div
-                    key={ii}
-                    className="bg-white rounded-2xl px-6 py-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-[#F2EBE9]"
-                  >
-                    <p className="font-semibold text-gray-900 text-sm md:text-base mb-2 leading-snug">
-                      Q. {item.q}
-                    </p>
-                    <p className="text-[#6B6661] font-light text-sm md:text-base leading-relaxed">
-                      {item.a}
-                    </p>
+                  <div key={ii} className="bg-white rounded-2xl px-6 py-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-[#F2EBE9]">
+                    <p className="font-semibold text-gray-900 text-sm md:text-base mb-2 leading-snug">Q. {item.q}</p>
+                    <p className="text-[#6B6661] font-light text-sm md:text-base leading-relaxed">{item.a}</p>
                   </div>
                 ))}
               </div>
             </motion.div>
           ))}
-        </div>
 
-        <p className="text-center text-sm md:text-base text-[#6B6661] font-light mt-8 md:mt-12">
-          이 외 문의사항은 <a href="https://chowon.channel.io" target="_blank" rel="noopener noreferrer" className="font-bold text-[#D68C82]">초원 고객센터</a>로 문의바랍니다.
-        </p>
+          <p className="text-center text-sm md:text-base text-[#6B6661] font-light mt-8 md:mt-12">
+            이 외 문의사항은{" "}
+            <a href="https://chowon.channel.io" target="_blank" rel="noopener noreferrer" className="font-bold text-[#D68C82]">
+              초원 고객센터
+            </a>
+            로 문의바랍니다.
+          </p>
+        </div>
       </section>
 
       {/* 7. CTA */}
       <section className="py-20 md:py-36 px-6 text-center relative overflow-hidden flex items-center justify-center min-h-[50vh] md:min-h-[60vh] bg-[#FAF7F5]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')",
-          }}
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" }}
         />
         <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" />
 
@@ -944,22 +755,18 @@ export function LandingPage() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-[44px] font-bold text-gray-900 mb-4 md:mb-6 leading-[1.3] tracking-tight">
             지금, 당신의 인연을 향한
-            <br />
-            첫걸음을 내딛으세요
+            <br />첫걸음을 내딛으세요
           </h2>
           <p className="text-base md:text-xl text-[#6B6661] mb-8 md:mb-10 font-light leading-relaxed px-4 md:px-0">
             초원의 새로운 프로젝트 &lt;초원 메이트&gt;는
-            <br />
-            신앙 안에서 사랑을 꿈꾸는 당신을 초대합니다.
+            <br />신앙 안에서 사랑을 꿈꾸는 당신을 초대합니다.
           </p>
 
           <div className="bg-white/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-5 rounded-2xl mb-8 md:mb-12 border border-[#D68C82]/30 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
             <p className="text-[13px] md:text-base text-[#8A5A53] font-medium leading-relaxed">
               결제 시 나이, 직업, 키, 출석 교회, 모태신앙 여부,
-              <br />
-              그리고 세부 가치관 등 정보를 수집하여
-              <br />
-              초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
+              <br />그리고 세부 가치관 등 정보를 수집하여
+              <br />초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
             </p>
           </div>
 
@@ -981,9 +788,7 @@ export function LandingPage() {
 
       {/* Footer */}
       <footer className="py-10 text-center text-[#999] text-sm bg-white border-t border-[#F2EBE9]">
-        <p className="font-light tracking-wide">
-          © Chowon all rights reserved.
-        </p>
+        <p className="font-light tracking-wide">© Chowon all rights reserved.</p>
       </footer>
     </div>
   );
