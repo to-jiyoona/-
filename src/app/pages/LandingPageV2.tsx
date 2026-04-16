@@ -17,6 +17,16 @@ import jangPastorImg from "../../assets/jang-pastor.jpg";
 import leeSojeongImg from "../../assets/lee-sojeong.jpg";
 import appLogoImg from "../../assets/앱로고.png";
 import minJoonImg from "../../assets/민준0678.jpg";
+import jiyunImg from "../../assets/지윤.PNG";
+import heroBgImg from "../../assets/히어로섹션배경.png";
+import female1Img from "../../assets/여성1.png";
+import female2Img from "../../assets/여성2.png";
+import female3Img from "../../assets/여성3.png";
+import female4Img from "../../assets/여성4.png";
+import male1Img from "../../assets/남성1.png";
+import male2Img from "../../assets/남성2.png";
+import male3Img from "../../assets/남성3.png";
+import male4Img from "../../assets/남성4.png";
 
 // 컬러 팔레트 (딥 세이지 그린)
 // 메인: #4A7C6F
@@ -60,7 +70,7 @@ export function LandingPageV2() {
         <div
           className="absolute inset-0 bg-cover bg-[center_30%]"
           style={{
-            backgroundImage: "url('/src/assets/히어로섹션배경.png')",
+            backgroundImage: `url(${heroBgImg})`,
           }}
         />
         {/* 세이지 그린 톤 오버레이 */}
@@ -168,10 +178,10 @@ export function LandingPageV2() {
             <div className="w-full max-w-2xl mx-auto mb-8">
               <div className="flex flex-col gap-5">
                 {[
-                  { img: "/src/assets/여성1.png", age: "26세", job: "XX항공 승무원", text: "주변에 크리스천 남성이 너무 없어요 ㅠㅠ" },
-                  { img: "/src/assets/여성2.png", age: "28세", job: "기독교방송사 아나운서", text: "신앙 없는 남성과는 가치관 충돌이 걱정돼요" },
-                  { img: "/src/assets/여성3.png", age: "27세", job: "인플루언서", text: "외부에서 만나면 이단일까봐 두렵고, 개인정보 노출도 걱정돼요" },
-                  { img: "/src/assets/여성4.png", age: "27세", job: "패션모델", text: "검증된 크리스천 남성을 안전하게 만나고 싶어요" },
+                  { img: female1Img, age: "26세", job: "XX항공 승무원", text: "주변에 크리스천 남성이 너무 없어요 ㅠㅠ" },
+                  { img: female2Img, age: "28세", job: "기독교방송사 아나운서", text: "신앙 없는 남성과는 가치관 충돌이 걱정돼요" },
+                  { img: female3Img, age: "27세", job: "인플루언서", text: "외부에서 만나면 이단일까봐 두렵고, 개인정보 노출도 걱정돼요" },
+                  { img: female4Img, age: "27세", job: "패션모델", text: "검증된 크리스천 남성을 안전하게 만나고 싶어요" },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -197,10 +207,10 @@ export function LandingPageV2() {
             <div className="w-full max-w-2xl mx-auto">
               <div className="flex flex-col gap-5">
                 {[
-                  { img: "/src/assets/남성1.png", age: "32세", job: "연구원", text: "여성 비율이 높지만 공동체 안에서는 조금 부담스러워요" },
-                  { img: "/src/assets/남성2.png", age: "30세", job: "중견기업 직장인", text: "공동체 밖에서는 크리스천 여성을 만날 기회가 없어요" },
-                  { img: "/src/assets/남성3.png", age: "29세", job: "프리랜서", text: "신앙 가치관을 나눌 수 있는 만남의 장이 없어요" },
-                  { img: "/src/assets/남성4.png", age: "33세", job: "교사", text: "신앙적 가치관이 잘 맞는 분을 만나고 싶어요" },
+                  { img: male1Img, age: "32세", job: "연구원", text: "여성 비율이 높지만 공동체 안에서는 조금 부담스러워요" },
+                  { img: male2Img, age: "30세", job: "중견기업 직장인", text: "공동체 밖에서는 크리스천 여성을 만날 기회가 없어요" },
+                  { img: male3Img, age: "29세", job: "프리랜서", text: "신앙 가치관을 나눌 수 있는 만남의 장이 없어요" },
+                  { img: male4Img, age: "33세", job: "교사", text: "신앙적 가치관이 잘 맞는 분을 만나고 싶어요" },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -236,26 +246,25 @@ export function LandingPageV2() {
                 <div className="absolute inset-0 bg-[#4A7C6F]/10 rounded-[2rem] transform translate-x-4 translate-y-4" />
                 <div className="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg group">
                   <ImageWithFallback
-                    src={minJoonImg}
-                    alt="초원대표 김민준"
+                    src={jiyunImg}
+                    alt="초원메이트 대표 이지윤"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-[#C8D8D4]/25 via-transparent to-[#9FBFB8]/15 mix-blend-multiply" />
                 </div>
               </div>
               <div className="md:hidden mt-6 text-center">
-                <p className="text-base font-bold text-[#4A7C6F] tracking-wide">초원대표 김민준</p>
+                <p className="text-base font-bold text-[#4A7C6F] tracking-wide">초원메이트 대표 이지윤</p>
               </div>
             </div>
 
             <div className="w-full md:w-1/2 flex flex-col text-center md:text-left">
               <div className="hidden md:block mb-6">
-                <p className="text-lg font-bold text-[#4A7C6F] tracking-wide">초원대표 김민준</p>
+                <p className="text-lg font-bold text-[#4A7C6F] tracking-wide">초원메이트 대표 이지윤</p>
               </div>
               <p className="text-base sm:text-lg md:text-xl leading-[1.9] md:leading-[1.95] text-[#2D2A26] font-light">
-                "공동체 내 교제의 부담, 남녀 성비 등<br />
-                크리스천의 연애 고민에 깊이 공감하는 마음으로<br />
-                <strong className="font-semibold text-[#4A7C6F]">안전하고 진중한 만남의 장을 만들게 되었습니다.</strong>"
+                "저 역시 한 명의 결혼적령기 크리스천 청년으로서 신앙 안에서 검증된 안전한 만남의 필요성을 깊이 공감합니다.{" "}
+                <strong className="font-semibold text-[#4A7C6F]">초원메이트를 통해 인연을 만나시길 소망합니다!</strong>"
               </p>
             </div>
           </motion.div>
