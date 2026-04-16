@@ -17,7 +17,7 @@ import jangPastorImg from "../../assets/jang-pastor.jpg";
 import leeSojeongImg from "../../assets/lee-sojeong.jpg";
 import appLogoImg from "../../assets/앱로고.png";
 import minJoonImg from "../../assets/민준0678.jpg";
-import jiyunImg from "../../assets/지윤.PNG";
+import jiyunImg from "../../assets/지윤.png";
 import heroBgImg from "../../assets/히어로섹션배경.png";
 import female1Img from "../../assets/여성1.png";
 import female2Img from "../../assets/여성2.png";
