@@ -28,11 +28,6 @@ import male2Img from "../../assets/남성2.png";
 import male3Img from "../../assets/남성3.png";
 import male4Img from "../../assets/남성4.png";
 
-// 컬러 팔레트 (딥 세이지 그린)
-// 메인: #4A7C6F
-// 서브: #7BA99A
-// 배경: #F4F7F5
-
 const fadeInVariant = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -69,11 +64,8 @@ export function LandingPageV2() {
       <header className="relative w-full h-screen flex flex-col items-center justify-start pt-[15vh] md:pt-[18vh] text-center overflow-hidden bg-[#F4F7F5]">
         <div
           className="absolute inset-0 bg-cover bg-[center_30%]"
-          style={{
-            backgroundImage: `url(${heroBgImg})`,
-          }}
+          style={{ backgroundImage: `url(${heroBgImg})` }}
         />
-        {/* 세이지 그린 톤 오버레이 */}
         <div className="absolute inset-0 bg-[#1A3330]/30 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#2D3F3A]/50 via-[#1A2E28]/30 to-[#1A2E28]/80" />
 
@@ -106,7 +98,7 @@ export function LandingPageV2() {
 
           <motion.h1
             variants={heroFadeVariant}
-            className="font-yonepick font-normal tracking-normal leading-[1.2] drop-shadow-lg mt-2 md:mt-4 text-[#BFF1E6] text-[72px] md:text-[88px]"
+            className="font-yonepick font-normal tracking-normal leading-[1.2] drop-shadow-lg mt-2 md:mt-4 text-[#BFF1E6] text-[61px] md:text-[75px]"
           >
             초원 메이트
           </motion.h1>
@@ -268,6 +260,24 @@ export function LandingPageV2() {
               </p>
             </div>
           </motion.div>
+
+          {/* ✅ 정보 안내 박스 — 대표 인용문 바로 아래 */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
+            className="w-full flex justify-center"
+          >
+            <div className="bg-white px-6 py-5 md:px-8 md:py-6 rounded-2xl border border-[#4A7C6F]/20 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
+              <p className="text-[13px] md:text-base text-[#2D5A4F] font-medium leading-relaxed">
+                결제 시 나이, 직업, 키, 출석 교회, 모태신앙 여부,
+                <br />그리고 세부 가치관 등 정보를 수집하여
+                <br />초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
+              </p>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
@@ -766,7 +776,7 @@ export function LandingPageV2() {
       </section>
 
       {/* 9. CTA */}
-      <section className="py-20 md:py-36 px-6 text-center relative overflow-hidden flex items-center justify-center min-h-[50vh] md:min-h-[60vh] bg-[#F4F7F5]">
+      <section className="py-20 md:py-36 px-6 text-center relative overflow-hidden flex items-center justify-center min-h-[40vh] md:min-h-[50vh] bg-[#F4F7F5]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-multiply"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" }}
@@ -778,25 +788,12 @@ export function LandingPageV2() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           variants={fadeInVariant}
-          className="relative z-10 max-w-4xl mx-auto flex flex-col items-center"
+          className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-8 md:gap-10"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-[44px] font-bold text-gray-900 mb-4 md:mb-6 leading-[1.3] tracking-tight">
-            기도에 실행을 더해,
-            <br />신앙 안에서 인연을 찾도록
+          <h2 className="text-2xl sm:text-3xl md:text-[44px] font-bold text-gray-900 leading-[1.3] tracking-tight text-center">
+            신앙안에서 만날 새로운 인연,
             <br />초원이 함께합니다.
           </h2>
-          <p className="text-base md:text-xl text-[#6B6661] mb-8 md:mb-10 font-light leading-relaxed px-4 md:px-0">
-            초원의 새로운 프로젝트 〈초원 메이트〉는
-            <br />신앙 안에서 사랑을 꿈꾸는 당신을 초대합니다.
-          </p>
-
-          <div className="bg-white/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-5 rounded-2xl mb-8 md:mb-12 border border-[#4A7C6F]/20 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
-            <p className="text-[13px] md:text-base text-[#2D5A4F] font-medium leading-relaxed">
-              결제 시 나이, 직업, 키, 출석 교회, 모태신앙 여부,
-              <br />그리고 세부 가치관 등 정보를 수집하여
-              <br />초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
-            </p>
-          </div>
 
           <motion.a
             href="https://www.latpeed.com/products/B4Jq4"
