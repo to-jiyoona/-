@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import { LandingPage } from "./pages/LandingPage";
 import { LandingPageV2 } from "./pages/LandingPageV2";
+import { LandingPageV3 } from "./pages/LandingPageV3";
 
 export const router = createBrowserRouter([
   {
@@ -10,5 +11,9 @@ export const router = createBrowserRouter([
   {
     path: "/v2",
     element: <LandingPageV2 />,
+  },
+  {
+    path: "/v3",
+    element: <LandingPageV3 />,
   },
 ]);
