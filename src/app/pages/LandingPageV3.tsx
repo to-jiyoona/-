@@ -454,16 +454,16 @@ export function LandingPageV3() {
               {
                 week: "1주차", mode: "온라인", speaker: "김상진 목사님",
                 title: "좋은 배우자를 원하십니까, 좋은 배우자가 되고 싶으십니까?",
-                desc: "사랑과 관계에 대한 성경적 기준을 세우고, 내가 원하는 배우자상을 구체화합니다.",
+                desc: "배우자 만남 전에 선행되어야 할 개인의 성숙",
                 img: null, date: SESSION_1_DATE,
                 bio: ["21만 유튜브 채널 달빛마을 운영", "CCM 사역팀 달빛마을 운영"],
               },
               {
                 week: "2주차", mode: "온라인", speaker: "Coming soon",
-                title: "크리스천의 연애와 결혼",
-                desc: "크리스천으로서 연애와 결혼을 어떻게 준비해야 할지 실질적인 이야기를 나눕니다.",
+                title: "두 사람이 함께 만들어가는 신앙 공동체",
+                desc: "크리스천 커플, 부부로서 만들어가는 가정 공동체에 대한 이야기",
                 img: null, date: SESSION_2_DATE,
-                bio: ["<하나님, 저희 잘 가고 있는 거 맞나요?> 저자", "크리스천 부부 인스타그램 계정 '나는 바보양' 운영"],
+                bio: ["Coming soon"],
               },
               {
                 week: "3주차", mode: "오프라인", speaker: "지윤 (호스트)",
