@@ -31,9 +31,9 @@ import male4Img from "../../assets/남성4.png";
 const SIGNUP_URL = "https://www.latpeed.com/products/B4Jq4"; // TODO: 다음기수 신청 링크로 교체
 const REFUND_DEADLINE = "4월 25일(토)"; // TODO: 다음기수 환불 마감일
 const REFUND_DEADLINE_FAQ = "4월 25일"; // TODO: FAQ용 환불 마감일
-const SESSION_1_DATE = "5월 2일 토요일 19시"; // TODO: 1주차 날짜
-const SESSION_2_DATE = "5월 8일 금요일 19시"; // TODO: 2주차 날짜
-const SESSION_3_DATE = "5월 16일 토요일 19시"; // TODO: 3주차 날짜
+const SESSION_1_DATE = "6월 13일 토요일 19시"; // TODO: 1주차 날짜
+const SESSION_2_DATE = "6월 20일 토요일 19시"; // TODO: 2주차 날짜
+const SESSION_3_DATE = "6월 27일 토요일 19시"; // TODO: 3주차 날짜
 
 const fadeInVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -452,17 +452,17 @@ export function LandingPageV3() {
           >
             {[
               {
-                week: "1주차", mode: "온라인", speaker: "장재기 목사님",
-                title: "하나님이 디자인하신 사랑과 관계",
+                week: "1주차", mode: "온라인", speaker: "김상진 목사님",
+                title: "좋은 배우자를 원하십니까, 좋은 배우자가 되고 싶으십니까?",
                 desc: "사랑과 관계에 대한 성경적 기준을 세우고, 내가 원하는 배우자상을 구체화합니다.",
-                img: jangPastorImg, date: SESSION_1_DATE,
-                bio: ["<따라하는 기도> 저자", "팔로잉 미니스트리 대표", "초원 기도하기 개발 참여"],
+                img: null, date: SESSION_1_DATE,
+                bio: ["21만 유튜브 채널 달빛마을 운영", "CCM 사역팀 달빛마을 운영"],
               },
               {
-                week: "2주차", mode: "온라인", speaker: "이소정 작가님",
+                week: "2주차", mode: "온라인", speaker: "Coming soon",
                 title: "크리스천의 연애와 결혼",
                 desc: "크리스천으로서 연애와 결혼을 어떻게 준비해야 할지 실질적인 이야기를 나눕니다.",
-                img: leeSojeongImg, date: SESSION_2_DATE,
+                img: null, date: SESSION_2_DATE,
                 bio: ["<하나님, 저희 잘 가고 있는 거 맞나요?> 저자", "크리스천 부부 인스타그램 계정 '나는 바보양' 운영"],
               },
               {
