@@ -109,6 +109,14 @@ export function LandingPageV3() {
           >
             초원 메이트
           </motion.h1>
+          <motion.p
+            variants={heroFadeVariant}
+            className="text-lg sm:text-xl md:text-2xl font-medium leading-relaxed drop-shadow-lg mt-1 md:mt-2"
+          >
+            <span className="bg-[#BFF1E6]/25 backdrop-blur-sm px-3 py-0.5 rounded-full border border-[#BFF1E6]/40 text-white">
+              시즌2
+            </span>
+          </motion.p>
         </motion.div>
 
         <motion.div
@@ -480,14 +488,14 @@ export function LandingPageV3() {
                 className="relative overflow-hidden w-full max-w-[800px] bg-[#F4F7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
               >
                 {session.img && (
-                  <div className="absolute inset-0 z-0 opacity-40">
+                  <div className={`absolute inset-0 z-0 ${index === 2 ? "opacity-25" : "opacity-40"}`}>
                     <ImageWithFallback
                       src={session.img}
                       alt={session.speaker}
                       className={`w-full h-full object-cover ${index === 2 ? "object-center" : "object-[center_20%]"}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-[#F4F7F5]/90 to-[#F4F7F5]/70 mix-blend-multiply" />
-                    <div className="absolute inset-0 bg-[#F4F7F5]/50" />
+                    <div className={`absolute inset-0 ${index === 2 ? "bg-[#F4F7F5]/75" : "bg-[#F4F7F5]/50"}`} />
                   </div>
                 )}
                 <div className="relative z-10 flex flex-col justify-between h-full min-h-[260px] md:min-h-[280px] p-6 md:p-8 lg:p-10">
@@ -679,7 +687,7 @@ export function LandingPageV3() {
               {[
                 { label: "참가비", desc: "15만원" },
                 { label: "결제방식", desc: "카드결제 (무이자 할부 결제 지원)" },
-                { label: "환불 규정", desc: `${REFUND_DEADLINE} 23:59까지 전액 환불, 이후 불가` },
+                { label: "환불 규정", desc: "구매 후 7일 이내 환불 가능, 이후 환불 불가" },
                 { label: "No-Show 패널티", desc: "무단 불참 시 다음 회차 참가 자격 박탈" },
                 { label: "사전 질문 & 후기", desc: "회차별 진행 예정." },
               ].map((item, i) => (
@@ -718,7 +726,7 @@ export function LandingPageV3() {
               items: [
                 { q: "초원성경 앱을 꼭 사용해야 하나요?", a: "네 맞습니다. 카카오톡으로 3초 로그인 가능하니 가입 후 신청해주세요!" },
                 { q: "비신자도 참가할 수 있나요?", a: "본 행사는 크리스천 청년 대상으로, 등록교회가 있으신 경우 초원 가입 후 신청 가능합니다." },
-                { q: "정원이 다 차면 어떻게 되나요?", a: `${REFUND_DEADLINE_FAQ} 23:59까지 환불 건 발생 시 추가 모집 예정입니다.` },
+                { q: "정원이 다 차면 어떻게 되나요?", a: "6월 1일 00시 이후 잔여좌석 발생 시 추가 모집 예정입니다." },
               ],
             },
             {
