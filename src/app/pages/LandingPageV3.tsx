@@ -28,7 +28,7 @@ import male3Img from "../../assets/남성3.png";
 import male4Img from "../../assets/남성4.png";
 
 // TODO: 다음기수에 맞게 아래 상수를 업데이트하세요.
-const SIGNUP_URL = "https://www.latpeed.com/products/B4Jq4"; // TODO: 다음기수 신청 링크로 교체
+const SIGNUP_URL = "https://www.latpeed.com/products/ZOEUd"; // TODO: 다음기수 신청 링크로 교체
 const REFUND_DEADLINE = "4월 25일(토)"; // TODO: 다음기수 환불 마감일
 const REFUND_DEADLINE_FAQ = "4월 25일"; // TODO: FAQ용 환불 마감일
 const SESSION_1_DATE = "6월 13일 토요일 19시"; // TODO: 1주차 날짜
