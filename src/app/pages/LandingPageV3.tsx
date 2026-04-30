@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import jangPastorImg from "../../assets/jang-pastor.jpg";
+import kimSangjinImg from "../../assets/김상진목사님.jpeg";
 import leeSojeongImg from "../../assets/lee-sojeong.jpg";
 import appLogoImg from "../../assets/앱로고.png";
 import jiyunImg from "../../assets/지윤.png";
@@ -28,7 +29,7 @@ import male3Img from "../../assets/남성3.png";
 import male4Img from "../../assets/남성4.png";
 
 // TODO: 다음기수에 맞게 아래 상수를 업데이트하세요.
-const SIGNUP_URL = "https://www.latpeed.com/products/ZOEUd"; // TODO: 다음기수 신청 링크로 교체
+const SIGNUP_URL = "https://www.latpeed.com/products/tDNWy"; // TODO: 다음기수 신청 링크로 교체
 const REFUND_DEADLINE = "4월 25일(토)"; // TODO: 다음기수 환불 마감일
 const REFUND_DEADLINE_FAQ = "4월 25일"; // TODO: FAQ용 환불 마감일
 const SESSION_1_DATE = "6월 13일 토요일 19시"; // TODO: 1주차 날짜
@@ -463,7 +464,7 @@ export function LandingPageV3() {
                 week: "1주차", mode: "온라인", speaker: "김상진 목사님",
                 title: "좋은 배우자를 원하십니까, 좋은 배우자가 되고 싶으십니까?",
                 desc: "배우자 만남 전에 선행되어야 할 개인의 성숙",
-                img: null, date: SESSION_1_DATE,
+                img: kimSangjinImg, date: SESSION_1_DATE,
                 bio: ["21만 유튜브 채널 달빛마을 운영", "CCM 사역팀 달빛마을 운영"],
               },
               {
@@ -471,7 +472,7 @@ export function LandingPageV3() {
                 title: "두 사람이 함께 만들어가는 신앙 공동체",
                 desc: "크리스천 커플, 부부로서 만들어가는 가정 공동체에 대한 이야기",
                 img: null, date: SESSION_2_DATE,
-                bio: ["Coming soon"],
+                bio: ["실제 크리스천 부부와 함께 크리스천의 결혼생활에 대해 이야기합니다"],
               },
               {
                 week: "3주차", mode: "오프라인", speaker: "지윤 (호스트)",
@@ -687,7 +688,6 @@ export function LandingPageV3() {
               {[
                 { label: "참가비", desc: "15만원" },
                 { label: "결제방식", desc: "카드결제 (무이자 할부 결제 지원)" },
-                { label: "환불 규정", desc: "구매 후 7일 이내 환불 가능, 이후 환불 불가" },
                 { label: "No-Show 패널티", desc: "무단 불참 시 다음 회차 참가 자격 박탈" },
                 { label: "사전 질문 & 후기", desc: "회차별 진행 예정." },
               ].map((item, i) => (
@@ -702,6 +702,33 @@ export function LandingPageV3() {
                 </li>
               ))}
             </ul>
+          </motion.div>
+        </div>
+
+        {/* 환불 안내 */}
+        <div className="max-w-4xl mx-auto mt-10 md:mt-14 px-2">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={fadeInVariant}
+            className="bg-[#FFF8F0] border border-[#F0C080]/40 rounded-2xl p-6 md:p-8"
+          >
+            <p className="text-sm md:text-base font-bold text-[#B45309] mb-4">(중요) 환불 안내</p>
+            <div className="space-y-4 text-sm md:text-base text-[#6B6661] font-light leading-relaxed">
+              <p>
+                1기 티켓의 빠른 매진, 그리고 마감직전 단순변심으로 인한 환불로 다른 참가자분들의 여러차례 사이트에서 티켓 재고를 확인해야하는 어려움이 있었습니다.
+              </p>
+              <p>
+                보다 원활한 티켓 판매를 위해 부득이하게 환불기간을 결제일 기준 3일이내로 조정하여 운영되며, 해당기간 이후 환불은 불가하니 참여 여부에 대해 심사숙고후 결제해주시면 너무 감사드리겠습니다 :-)
+              </p>
+              <p>
+                보다 풍성한 프로그램을 위해 초원지기들도 최선을 다하겠습니다.
+              </p>
+              <p className="text-xs md:text-sm text-[#9CA3AF] pt-2 border-t border-[#F0C080]/40">
+                *원활한 프로그램 진행을 위해 5월 31일 23:59이후는 구매 3일내 이시더라도 환불이 불가하니 5월말 구매하시는 분들은 참고 부탁드립니다.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -732,7 +759,7 @@ export function LandingPageV3() {
             {
               category: "일정/진행 관련",
               items: [
-                { q: "3번 모임에 모두 참석해야 하나요?", a: "1-2회차 참석하신 분들에 한해 3회차 오프라인 모임 참석 권한이 부여됩니다." },
+                { q: "3번 모임에 모두 참석해야 하나요?", a: "본 프로그램은 신앙 안에서 연애와 결혼, 사랑에 대해 공부하고, 교류하는 커리큘럼으로, 1,2회차 모두 참석하신분들에 대해서만 3회차 오프라인 모임 참석 권한이 주어집니다." },
                 { q: "ZOOM 링크는 언제 공유되나요?", a: "참가 확정자분들께 별도 문자 안내 예정입니다." },
                 { q: "오프라인 장소는 어디인가요?", a: "2회차 종료 후 참석 대상자분들께 별도 공지 예정입니다." },
               ],
