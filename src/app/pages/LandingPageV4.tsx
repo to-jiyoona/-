@@ -365,7 +365,7 @@ export function LandingPageV4() {
               style={{ scrollbarWidth: "none" }}
             >
               {Array.from({ length: totalReviewPages }).map((_, pageIdx) => (
-                <div key={pageIdx} className="min-w-full snap-start flex gap-4">
+                <div key={pageIdx} className="min-w-full snap-start flex flex-col gap-4">
                   {reviews.slice(pageIdx * 2, pageIdx * 2 + 2).map((item, i) => (
                     <div
                       key={i}
