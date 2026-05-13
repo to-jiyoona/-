@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
 import {
-  ArrowDown,
   Scale,
   Users,
   Monitor,
@@ -15,10 +14,11 @@ import {
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import jangPastorImg from "../../assets/jang-pastor.jpg";
 import kimSangjinImg from "../../assets/김상진목사님.jpeg";
+import kimSukyungImg from "../../assets/김수경님.jpeg";
 import leeSojeongImg from "../../assets/lee-sojeong.jpg";
 import appLogoImg from "../../assets/앱로고.png";
 import jiyunImg from "../../assets/지윤.png";
-import heroBgImg from "../../assets/히어로섹션배경.png";
+import heroBgImg from "../../assets/히어로섹션배경_6월.png";
 import female1Img from "../../assets/여성1.png";
 import female2Img from "../../assets/여성2.png";
 import female3Img from "../../assets/여성3.png";
@@ -71,11 +71,11 @@ export function LandingPageV3() {
       {/* 1. Hero Section */}
       <header className="relative w-full h-screen flex flex-col items-center justify-start pt-[15vh] md:pt-[18vh] text-center overflow-hidden bg-[#F4F7F5]">
         <div
-          className="absolute inset-0 bg-cover bg-[center_30%]"
+          className="absolute inset-0 bg-cover bg-[center_15%] md:bg-[center_30%]"
           style={{ backgroundImage: `url(${heroBgImg})` }}
         />
-        <div className="absolute inset-0 bg-[#1A3330]/30 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2D3F3A]/50 via-[#1A2E28]/30 to-[#1A2E28]/80" />
+        <div className="absolute inset-0 bg-[#2D4F3A]/55 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/20" />
 
         <img
           src={appLogoImg}
@@ -83,6 +83,7 @@ export function LandingPageV3() {
           className="absolute top-6 md:top-8 left-1/2 -translate-x-1/2 z-20 w-9 h-9 md:w-11 md:h-11 object-contain drop-shadow-md rounded-xl"
         />
 
+        {/* 상단 텍스트 영역 */}
         <motion.div
           initial="hidden"
           animate="visible"
@@ -95,64 +96,134 @@ export function LandingPageV3() {
           }}
           className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center text-white mt-[-4vh]"
         >
-          <motion.div variants={heroFadeVariant} className="flex flex-col items-center">
-            <span className="text-base sm:text-lg tracking-wide mb-5 md:mb-7 opacity-95 border-b border-white/50 pb-1 font-semibold drop-shadow-lg">
-              막연히 기도만 해왔다면, 이제 행동할 때입니다.
-            </span>
-            <p className="text-lg sm:text-xl md:text-2xl font-medium opacity-95 leading-relaxed drop-shadow-lg mb-3 md:mb-5">
-              신앙 안에서의 진지한 만남
-            </p>
-          </motion.div>
-
-          <motion.h1
-            variants={heroFadeVariant}
-            className="font-yonepick font-normal tracking-normal leading-[1.2] drop-shadow-lg mt-2 md:mt-4 text-[#BFF1E6] text-[61px] md:text-[75px]"
-          >
-            초원 메이트
-          </motion.h1>
+          {/* 태그라인 — 가장 작은 글씨 */}
           <motion.p
             variants={heroFadeVariant}
-            className="text-lg sm:text-xl md:text-2xl font-medium leading-relaxed drop-shadow-lg mt-1 md:mt-2"
+            className="text-xs sm:text-sm tracking-wide text-white/85 mb-5 md:mb-7 drop-shadow-md"
           >
-            <span className="bg-[#BFF1E6]/25 backdrop-blur-sm px-3 py-0.5 rounded-full border border-[#BFF1E6]/40 text-white">
-              시즌2
-            </span>
+            80만 크리스천이 사용하는 초원이 만든 매칭 프로그램
+          </motion.p>
+
+          {/* 메인카피 — 가장 크게 */}
+          <motion.h1
+            variants={heroFadeVariant}
+            className="text-[34px] sm:text-[42px] md:text-[52px] font-bold leading-[1.3] tracking-tight [text-shadow:0_4px_16px_rgba(0,0,0,0.6),0_1px_4px_rgba(0,0,0,0.4)]"
+          >
+            신앙이 맞는 사람과<br />
+            진지하게 만나고 싶다면
+          </motion.h1>
+
+          {/* 브랜드 + 시즌 */}
+          <motion.p
+            variants={heroFadeVariant}
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-[#BFF1E6] drop-shadow-md mt-3 md:mt-4"
+          >
+            초원 메이트 6월
           </motion.p>
         </motion.div>
 
+        {/* 하단 CTA 영역 */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 2.5 }}
           className="absolute bottom-10 md:bottom-16 left-1/2 transform -translate-x-1/2 flex justify-center w-full px-4"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-4"
-          >
+          <div className="flex flex-col items-center gap-3">
             <motion.a
               href={SIGNUP_URL}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-5 text-base md:text-lg font-bold text-white bg-[#4A7C6F] hover:bg-[#3D6B5F] rounded-full overflow-hidden transition-colors shadow-xl shadow-[#4A7C6F]/30"
+              className="inline-flex items-center justify-center px-8 py-4 md:px-12 md:py-5 text-base md:text-lg font-bold text-white bg-[#4A7C6F] hover:bg-[#3D6B5F] rounded-full transition-colors shadow-xl shadow-[#4A7C6F]/30"
             >
-              <span className="relative flex items-center gap-2 md:gap-3 tracking-wide">
-                바로 신청하기
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />
-              </span>
+              지금 신청하기 →
             </motion.a>
-            <p className="text-sm md:text-base font-light text-white/95 whitespace-pre-line text-center leading-[1.6] drop-shadow-md">
-              기도로 기다려온 만남,{"\n"}그 첫걸음을 시작해 볼까요?
+            <p className="text-xs text-white/70 drop-shadow-sm">
+              60명 모집, 현재 36명이 신청했어요
             </p>
-            <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
-              <ArrowDown className="w-4 h-4 text-white/95 stroke-[2]" />
-            </div>
-          </motion.div>
+          </div>
         </motion.div>
       </header>
+
+      {/* 1.5. Season 1 Review */}
+      <section className="py-16 md:py-24 px-6 bg-[#4A7C6F]">
+        <div className="max-w-5xl mx-auto">
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={fadeInVariant}
+            className="text-center mb-12 md:mb-16"
+          >
+            <span className="text-[#BFF1E6] font-semibold tracking-widest text-xs md:text-sm mb-3 block uppercase">
+              Season 1 Review
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-[36px] font-bold tracking-tight text-white leading-[1.4]">
+              시즌 1 매진 후 쏟아진 대기 신청,<br />드디어 시즌 2가 시작됩니다
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5"
+          >
+            {[
+              { gender: "여", age: 27, job: "회계·세무 직장인", review: <>크리스천으로서 <strong className="font-semibold text-[#2D5A4F]">연애와 결혼에 대해 깊게 고민</strong>해본 시간이었습니다. 2주차도 기대됩니다</> },
+              { gender: "남", age: 31, job: "교사", review: <>강의 내용이 <strong className="font-semibold text-[#2D5A4F]">생각보다 알차고 깊었습니다.</strong> 기독교적 가치관 안에서 올바른 연애와 결혼관을 들을 수 있어 좋았습니다</> },
+              { gender: "여", age: 34, job: "간호사", review: <><strong className="font-semibold text-[#2D5A4F]">같은 고민을 갖고 있는 크리스천 청년들이 많다</strong>는 것에 위로가 되었고 희망과 용기를 얻었습니다</> },
+              { gender: "남", age: 36, job: "경찰관", review: <>비슷한 고민을 가진 청년들이 모여 <strong className="font-semibold text-[#2D5A4F]">신앙 안에서 얘기를 나눌 수 있는 시간</strong>이어서 좋았습니다</> },
+              { gender: "여", age: 30, job: "교사", review: <>친구에게 어서 <strong className="font-semibold text-[#2D5A4F]">2기를 추천</strong>할 예정이에요!</> },
+              { gender: "남", age: 36, job: "서비스직", review: <>걱정도 많았지만 <strong className="font-semibold text-[#2D5A4F]">강의도 너무 좋았고 프로그램이 알차고 유익</strong>했습니다. 다음 회차가 기다려집니다!</> },
+              { gender: "여", age: 32, job: "IT 기획·PM", review: <>생각보다 <strong className="font-semibold text-[#2D5A4F]">부담스럽지도, 두렵지도 않았습니다.</strong> 2주차가 너무 기대됩니다!</> },
+              { gender: "남", age: 34, job: "안전관리자", review: <>연애와 결혼을 고민하는 <strong className="font-semibold text-[#2D5A4F]">크리스천에게 꼭 필요한 말씀</strong>이었습니다. 여러 사람과의 나눔이 너무나도 감사한 시간이었습니다</> },
+              { gender: "여", age: 31, job: "커머스 직장인", review: <><strong className="font-semibold text-[#2D5A4F]">명확한 목표와 신앙을 가진 분들</strong>과 나눔이 은혜가 됐습니다. 다음 모임도 기대됩니다!</> },
+              { gender: "남", age: 28, job: "의사", review: <>걱정과 달리, <strong className="font-semibold text-[#2D5A4F]">목소리만으로 나누는 게 오히려 진솔</strong>했어요. 다음 회차가 기대됩니다</> },
+              { gender: "여", age: 34, job: "간호사", review: <><strong className="font-semibold text-[#2D5A4F]">건강한 방향으로 가고자 하는 청년들이 많구나,</strong> 같은 고민을 하는 청년들이 많구나 느꼈어요</> },
+              { gender: "남", age: 31, job: "공기업 직원", review: <>처음엔 긴장했지만 <strong className="font-semibold text-[#2D5A4F]">분위기가 편안</strong>했고 앞으로의 시간도 기대됩니다</> },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInVariant}
+                className="bg-[#F4F7F5] rounded-2xl p-6 md:p-7 flex flex-col gap-3"
+              >
+                <span className="text-[#4A7C6F] text-2xl font-serif leading-none">"</span>
+                <p className="text-[#2D2A26] text-sm md:text-base leading-relaxed font-light flex-1">
+                  {item.review}
+                </p>
+                <div className="flex items-center gap-2 pt-3 border-t border-[#C8D8D4]">
+                  <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
+                    item.gender === "여"
+                      ? "bg-[#4A7C6F]/15 text-[#2D5A4F]"
+                      : "bg-[#4A7C6F]/8 text-[#4A7C6F]"
+                  }`}>
+                    {item.gender}
+                  </span>
+                  <span className="text-[#6B6661] text-xs md:text-sm">
+                    {item.age}세 · {item.job}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="text-center text-white/70 text-sm mt-10"
+          >
+            시즌 1 참가자 69명의 실제 후기입니다
+          </motion.p>
+
+        </div>
+      </section>
 
       {/* 2. Our Reality */}
       <section className="py-20 md:py-32 px-6 bg-[#F4F7F5]">
@@ -468,11 +539,11 @@ export function LandingPageV3() {
                 bio: ["21만 유튜브 채널 달빛마을 운영", "CCM 사역팀 달빛마을 운영"],
               },
               {
-                week: "2주차", mode: "온라인", speaker: "Coming soon",
+                week: "2주차", mode: "온라인", speaker: "김수경님",
                 title: "두 사람이 함께 만들어가는 신앙 공동체",
-                desc: "크리스천 커플, 부부로서 만들어가는 가정 공동체에 대한 이야기",
-                img: null, date: SESSION_2_DATE,
-                bio: ["실제 크리스천 부부와 함께 크리스천의 결혼생활에 대해 이야기합니다"],
+                desc: "결혼 준비과정 자체가 간증인 크리스천 부부의 이야기",
+                img: kimSukyungImg, date: SESSION_2_DATE,
+                bio: ["크리스천 부부 인스타그램 계정 @give_yourwedding 운영"],
               },
               {
                 week: "3주차", mode: "오프라인", speaker: "지윤 (호스트)",
@@ -488,7 +559,18 @@ export function LandingPageV3() {
                 variants={fadeInVariant}
                 className="relative overflow-hidden w-full max-w-[800px] bg-[#F4F7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
               >
-                {session.img && (
+                {session.img && index === 1 && (
+                  <div className="absolute inset-0 z-0 opacity-30">
+                    <img
+                      src={session.img as string}
+                      alt={session.speaker}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: "center 45%" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#F4F7F5]/80 via-[#F4F7F5]/50 to-[#F4F7F5]/30" />
+                  </div>
+                )}
+                {session.img && index !== 1 && (
                   <div className={`absolute inset-0 z-0 ${index === 2 ? "opacity-25" : "opacity-40"}`}>
                     <ImageWithFallback
                       src={session.img}
