@@ -167,7 +167,7 @@ export function LandingPageV3() {
               transition: { staggerChildren: 0.45, delayChildren: 0.3 },
             },
           }}
-          className="relative z-10 flex flex-col flex-1 px-6 pt-[15vh] md:pt-[18vh] pb-8 max-w-lg md:max-w-2xl mx-auto w-full"
+          className="relative z-10 flex flex-col flex-1 px-6 pt-[9vh] md:pt-[18vh] pb-[10vh] md:pb-8 max-w-lg md:max-w-2xl mx-auto w-full"
         >
           {/* 메인 헤딩 */}
           <motion.h1
@@ -175,7 +175,7 @@ export function LandingPageV3() {
             className="text-[38px] sm:text-[46px] md:text-[54px] font-bold leading-[1.25] tracking-tight text-white [text-shadow:0_4px_16px_rgba(0,0,0,0.6),0_1px_4px_rgba(0,0,0,0.4)] mb-6 text-center"
           >
             신앙도 취향도 잘 맞는 인연<br />
-            <span className="text-[#BFF1E6]">초원메이트</span>
+            <span className="text-[#BFF1E6] text-[52px] sm:text-[62px] md:text-[72px]">초원메이트</span>
           </motion.h1>
 
           {/* 스페이서 */}
