@@ -77,10 +77,40 @@ const reviews = [
   { gender: "남", age: 31, job: "공기업 직원", review: <>처음엔 긴장했지만 <strong className="font-semibold text-[#2D5A4F]">분위기가 편안</strong>했고 앞으로의 시간도 기대됩니다</> },
 ];
 
+const whyItems = [
+  {
+    icon: <Shield className="w-7 h-7" />,
+    title: "철저한 프로필 검토와 매칭",
+    desc: "80만 명이 사용하는 초원성경앱의 신앙 데이터 기반으로 크리스천임을 검증하고, 프로필 검토를 통해 참가자 매칭을 위한 밸런스를 조율합니다.",
+    points: ["신앙 데이터 기반 검증", "이단 필터링", "매칭을 위한 철저한 프로필 검토"],
+  },
+  {
+    icon: <Users className="w-7 h-7" />,
+    title: "교회 공동체와 완전히 분리된 만남",
+    desc: "같은 교회 교인끼리 마주치지 않도록 매칭됩니다. 공동체 관계에 영향 없이 만남 자체에만 집중할 수 있습니다.",
+    points: ["공동체와 완전 분리", "소문 걱정 없음", "실패해도 일상에 영향 없음"],
+  },
+  {
+    icon: <Lock className="w-7 h-7" />,
+    title: "철저히 보호되는 개인정보",
+    desc: "소개팅 앱처럼 사전에 정보를 공개하지 않습니다. 연락처는 양쪽이 모두 선택했을 때만 공유되며, 프로그램 진행 외에는 어떤 정보도 공개되지 않습니다.",
+    points: ["선택적 정보 공개", "철저한 보안", "신뢰할 수 있는 플랫폼"],
+  },
+  {
+    icon: <MessageCircle className="w-7 h-7" />,
+    title: "신앙 가치관을 자연스럽게 나누는 구조",
+    desc: "발제문이 제공되어 스몰토크 걱정 없이 대화를 시작할 수 있습니다. 신앙, 가치관, 인생관을 깊이 있게 나누며 진정성 있는 만남이 시작됩니다.",
+    points: ["발제문 기반 토론", "깊이 있는 대화", "신앙 가치관 자연스럽게 확인"],
+  },
+];
+
 export function LandingPageV3() {
   const reviewScrollRef = useRef<HTMLDivElement>(null);
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const totalReviewPages = Math.ceil(reviews.length / 2);
+
+  const whyScrollRef = useRef<HTMLDivElement>(null);
+  const [currentWhyCard, setCurrentWhyCard] = useState(0);
 
   const scrollToReviewPage = (page: number) => {
     if (!reviewScrollRef.current) return;
@@ -93,6 +123,19 @@ export function LandingPageV3() {
     if (!reviewScrollRef.current) return;
     const page = Math.round(reviewScrollRef.current.scrollLeft / reviewScrollRef.current.offsetWidth);
     setCurrentReviewPage(page);
+  };
+
+  const scrollToWhyCard = (idx: number) => {
+    if (!whyScrollRef.current) return;
+    const containerWidth = whyScrollRef.current.offsetWidth;
+    whyScrollRef.current.scrollTo({ left: idx * containerWidth, behavior: "smooth" });
+    setCurrentWhyCard(idx);
+  };
+
+  const handleWhyScroll = () => {
+    if (!whyScrollRef.current) return;
+    const idx = Math.round(whyScrollRef.current.scrollLeft / whyScrollRef.current.offsetWidth);
+    setCurrentWhyCard(idx);
   };
 
   return (
@@ -442,60 +485,71 @@ export function LandingPageV3() {
             </h2>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8"
-          >
-            {[
-              {
-                icon: <Shield className="w-7 h-7" />,
-                title: "철저한 프로필 검토와 매칭",
-                desc: "80만 명이 사용하는 초원성경앱의 신앙 데이터 기반으로 크리스천임을 검증하고, 프로필 검토를 통해 참가자 매칭을 위한 밸런스를 조율합니다.",
-                points: ["신앙 데이터 기반 검증", "이단 필터링", "매칭을 위한 철저한 프로필 검토"],
-              },
-              {
-                icon: <Users className="w-7 h-7" />,
-                title: "교회 공동체와 완전히 분리된 만남",
-                desc: "같은 교회 교인끼리 마주치지 않도록 매칭됩니다. 공동체 관계에 영향 없이 만남 자체에만 집중할 수 있습니다.",
-                points: ["공동체와 완전 분리", "소문 걱정 없음", "실패해도 일상에 영향 없음"],
-              },
-              {
-                icon: <Lock className="w-7 h-7" />,
-                title: "철저히 보호되는 개인정보",
-                desc: "소개팅 앱처럼 사전에 정보를 공개하지 않습니다. 연락처는 양쪽이 모두 선택했을 때만 공유되며, 프로그램 진행 외에는 어떤 정보도 공개되지 않습니다.",
-                points: ["선택적 정보 공개", "철저한 보안", "신뢰할 수 있는 플랫폼"],
-              },
-              {
-                icon: <MessageCircle className="w-7 h-7" />,
-                title: "신앙 가치관을 자연스럽게 나누는 구조",
-                desc: "발제문이 제공되어 스몰토크 걱정 없이 대화를 시작할 수 있습니다. 신앙, 가치관, 인생관을 깊이 있게 나누며 진정성 있는 만남이 시작됩니다.",
-                points: ["발제문 기반 토론", "깊이 있는 대화", "신앙 가치관 자연스럽게 확인"],
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInVariant}
-                className="bg-[#F4F7F5] p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 text-[#4A7C6F] shadow-sm flex-shrink-0">
-                  {item.icon}
+          <div className="relative">
+            {/* Left arrow */}
+            <button
+              onClick={() => scrollToWhyCard(Math.max(0, currentWhyCard - 1))}
+              disabled={currentWhyCard === 0}
+              className="absolute left-[-20px] md:left-[-44px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#4A7C6F]/10 hover:bg-[#4A7C6F]/20 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              aria-label="이전"
+            >
+              <ChevronLeft className="w-5 h-5 text-[#4A7C6F]" />
+            </button>
+
+            {/* Scroll container */}
+            <div
+              ref={whyScrollRef}
+              onScroll={handleWhyScroll}
+              className="overflow-x-auto snap-x snap-mandatory flex [&::-webkit-scrollbar]:hidden"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {whyItems.map((item, index) => (
+                <div key={index} className="min-w-full snap-start px-1">
+                  <div className="bg-[#F4F7F5] p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-300 hover:shadow-lg h-full">
+                    <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 text-[#4A7C6F] shadow-sm flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg md:text-xl font-bold mb-3 text-gray-900 tracking-tight">{item.title}</h3>
+                    <p className="text-[#6B6661] leading-relaxed font-light text-sm md:text-base mb-5">{item.desc}</p>
+                    <ul className="space-y-2">
+                      {item.points.map((point, i) => (
+                        <li key={i} className="flex items-center gap-2 text-sm text-[#4A7C6F] font-medium">
+                          <Check className="w-4 h-4 stroke-[3] flex-shrink-0" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <h3 className="text-lg md:text-xl font-bold mb-3 text-gray-900 tracking-tight">{item.title}</h3>
-                <p className="text-[#6B6661] leading-relaxed font-light text-sm md:text-base mb-5">{item.desc}</p>
-                <ul className="space-y-2">
-                  {item.points.map((point, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-[#4A7C6F] font-medium">
-                      <Check className="w-4 h-4 stroke-[3] flex-shrink-0" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+              ))}
+            </div>
+
+            {/* Right arrow */}
+            <button
+              onClick={() => scrollToWhyCard(Math.min(whyItems.length - 1, currentWhyCard + 1))}
+              disabled={currentWhyCard === whyItems.length - 1}
+              className="absolute right-[-20px] md:right-[-44px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#4A7C6F]/10 hover:bg-[#4A7C6F]/20 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              aria-label="다음"
+            >
+              <ChevronRight className="w-5 h-5 text-[#4A7C6F]" />
+            </button>
+          </div>
+
+          {/* Dot indicators */}
+          <div className="flex items-center justify-center gap-2 mt-6">
+            {whyItems.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollToWhyCard(i)}
+                className={`rounded-full transition-all ${
+                  i === currentWhyCard
+                    ? "w-5 h-2 bg-[#4A7C6F]"
+                    : "w-2 h-2 bg-[#4A7C6F]/30"
+                }`}
+                aria-label={`${i + 1}번째`}
+              />
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
