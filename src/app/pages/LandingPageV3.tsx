@@ -478,10 +478,10 @@ export function LandingPageV3() {
             className="text-center mb-12 md:mb-20"
           >
             <span className="text-[#4A7C6F] font-semibold tracking-widest text-xs md:text-sm mb-2 md:mb-3 block uppercase">
-              Why 초원 메이트
+              초원메이트
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-5">
-              초원 메이트가 다른 이유
+              안심하고 만날 수 있어요
             </h2>
           </motion.div>
 
