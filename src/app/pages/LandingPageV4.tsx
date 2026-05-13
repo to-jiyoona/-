@@ -77,7 +77,7 @@ const reviews = [
   { gender: "남", age: 31, job: "공기업 직원", review: <>처음엔 긴장했지만 <strong className="font-semibold text-[#2D5A4F]">분위기가 편안</strong>했고 앞으로의 시간도 기대됩니다</> },
 ];
 
-export function LandingPageV3() {
+export function LandingPageV4() {
   const reviewScrollRef = useRef<HTMLDivElement>(null);
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const totalReviewPages = Math.ceil(reviews.length / 2);
