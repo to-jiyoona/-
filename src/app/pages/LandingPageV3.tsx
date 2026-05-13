@@ -114,12 +114,18 @@ export function LandingPageV3() {
           </motion.h1>
 
           {/* 브랜드 + 시즌 */}
-          <motion.p
+          <motion.div
             variants={heroFadeVariant}
-            className="text-lg sm:text-xl md:text-2xl font-semibold text-[#BFF1E6] drop-shadow-md mt-3 md:mt-4"
+            className="flex items-center justify-center gap-2 mt-3 md:mt-4"
           >
-            초원 메이트 6월
-          </motion.p>
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-[#BFF1E6] drop-shadow-md">
+              초원 메이트
+            </p>
+            <span className="text-xs sm:text-sm font-semibold text-[#4A7C6F] bg-[#BFF1E6] px-2.5 py-1 rounded-full drop-shadow-md">
+              6월
+            </span>
+          </motion.div>
+
         </motion.div>
 
         {/* 하단 CTA 영역 */}
@@ -130,6 +136,18 @@ export function LandingPageV3() {
           className="absolute bottom-10 md:bottom-16 left-1/2 transform -translate-x-1/2 flex justify-center w-full px-4"
         >
           <div className="flex flex-col items-center gap-3">
+            {/* 프로그램 뱃지 */}
+            <div className="flex items-center justify-center flex-wrap gap-2">
+              <span className="flex items-center gap-1.5 text-xs sm:text-sm text-white/85 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full drop-shadow-sm">
+                📅 3주 프로그램
+              </span>
+              <span className="flex items-center gap-1.5 text-xs sm:text-sm text-white/85 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full drop-shadow-sm">
+                🖥 온/오프라인 결합
+              </span>
+              <span className="flex items-center gap-1.5 text-xs sm:text-sm text-white/85 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full drop-shadow-sm">
+                🎤 강연+소그룹세션
+              </span>
+            </div>
             <motion.a
               href={SIGNUP_URL}
               target="_blank"
