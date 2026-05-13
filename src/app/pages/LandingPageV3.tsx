@@ -99,7 +99,7 @@ export function LandingPageV3() {
     <div className="font-sans text-[#2D2A26] bg-white w-full overflow-x-hidden">
 
       {/* 1. Hero Section */}
-      <header className="relative w-full h-screen flex flex-col items-center justify-start pt-[15vh] md:pt-[18vh] text-center overflow-hidden bg-[#F4F7F5]">
+      <header className="relative w-full h-[70vh] md:h-screen flex flex-col items-center justify-start pt-[12vh] md:pt-[18vh] text-center overflow-hidden bg-[#F4F7F5]">
         <div
           className="absolute inset-0 bg-cover bg-[center_15%] md:bg-[center_30%]"
           style={{ backgroundImage: `url(${heroBgImg})` }}
