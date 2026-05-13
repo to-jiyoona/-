@@ -1,17 +1,15 @@
 import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
 import {
-  Scale,
   Users,
-  Monitor,
   Check,
   ArrowRight,
-  Mic,
   Shield,
   Lock,
   MessageCircle,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import jangPastorImg from "../../assets/jang-pastor.jpg";
@@ -21,6 +19,7 @@ import leeSojeongImg from "../../assets/lee-sojeong.jpg";
 import appLogoImg from "../../assets/앱로고.png";
 import jiyunImg from "../../assets/지윤.png";
 import heroBgImg from "../../assets/히어로섹션배경_6월.png";
+import matchingDinnerImg from "../../assets/매칭식사.png";
 import female1Img from "../../assets/여성1.png";
 import female2Img from "../../assets/여성2.png";
 import male2Img from "../../assets/남성2.png";
@@ -138,6 +137,8 @@ export function LandingPageV3() {
     setCurrentWhyCard(idx);
   };
 
+  const [openFaq, setOpenFaq] = useState<string | null>(null);
+
   return (
     <div className="font-sans text-[#2D2A26] bg-white w-full overflow-x-hidden">
 
@@ -239,7 +240,7 @@ export function LandingPageV3() {
       </header>
 
       {/* 2. Our Reality */}
-      <section className="py-20 md:py-32 px-6 bg-[#F4F7F5]">
+      <section className="pt-12 pb-20 md:pt-20 md:pb-32 px-6 bg-[#F4F7F5]">
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -248,9 +249,6 @@ export function LandingPageV3() {
             transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
             className="w-full flex flex-col items-center"
           >
-            <span className="text-[#4A7C6F] font-semibold tracking-widest text-xs md:text-sm mb-3 block uppercase text-center">
-              Our Reality
-            </span>
             <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-gray-900 mb-6 md:mb-8 leading-[1.3] tracking-tight text-center">
               크리스천의 연애와 결혼,
               <br />왜 이토록{" "}
@@ -340,9 +338,6 @@ export function LandingPageV3() {
             variants={fadeInVariant}
             className="text-center mb-12 md:mb-16"
           >
-            <span className="text-[#BFF1E6] font-semibold tracking-widest text-xs md:text-sm mb-3 block uppercase">
-              Season 1 Review
-            </span>
             <h2 className="text-2xl sm:text-3xl md:text-[36px] font-bold tracking-tight text-white leading-[1.4]">
               시즌 1 참가자 69명이 직접 남긴 후기예요
             </h2>
@@ -427,8 +422,8 @@ export function LandingPageV3() {
         </div>
       </section>
 
-      {/* 3. Why 초원 메이트 */}
-      <section className="py-16 md:py-28 px-6 bg-white">
+      {/* 4. Program Details */}
+      <section className="py-16 md:py-28 px-6 bg-[#F4F7F5]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -437,12 +432,220 @@ export function LandingPageV3() {
             variants={fadeInVariant}
             className="text-center mb-12 md:mb-20"
           >
-            <span className="text-[#4A7C6F] font-semibold tracking-widest text-xs md:text-sm mb-2 md:mb-3 block uppercase">
-              초원메이트
-            </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-5">
-              안심하고 만날 수 있어요
+              초원메이트를 소개할게요
             </h2>
+            <p className="text-[#6B6661] max-w-2xl mx-auto leading-relaxed font-light text-base md:text-lg">
+              강연부터 대화 가이드, 첫 만남 준비까지 다 준비해드려요
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            className="flex flex-col gap-3 md:gap-4 pt-6 pb-12"
+          >
+            {[
+              {
+                emoji: "✨",
+                title: "비주얼 컨설팅 (온라인 사전미팅)",
+                desc: "오프라인 첫 만남 전, 1:1 온라인 미팅으로 인상과 스타일을 함께 점검해 드려요",
+              },
+              {
+                emoji: "🎙️",
+                title: "온라인 강연 2회",
+                desc: "목사님, 크리스천 부부 — 신앙과 만남을 주제로 한 특별 강연을 들어요",
+              },
+              {
+                emoji: "📄",
+                title: "소그룹 발제문 제공",
+                desc: "어색한 침묵 없이 대화가 깊어지도록, 매 회차 대화 가이드를 드려요",
+              },
+              {
+                emoji: "🤝",
+                title: "오프라인 세션",
+                desc: "2주간 목소리로 먼저 알아간 뒤, 3주차에 직접 만나요",
+              },
+              {
+                emoji: "🎬",
+                title: "강연 녹화본 제공",
+                desc: "놓친 강연도 다시 볼 수 있어요. 프로그램 종료 후에도 남아요",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInVariant}
+                className="bg-white px-5 py-4 md:px-6 md:py-5 rounded-2xl shadow-[0_2px_12px_rgb(0,0,0,0.04)] flex items-center gap-4"
+              >
+                <div className="w-10 h-10 bg-[#F4F7F5] rounded-full flex items-center justify-center flex-shrink-0 text-xl">
+                  {item.emoji}
+                </div>
+                <div className="text-left">
+                  <h3 className="text-sm md:text-base font-bold text-gray-900 tracking-tight mb-0.5">{item.title}</h3>
+                  <p className="text-[#6B6661] font-light text-xs md:text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 5. Curriculum */}
+      <section className="py-16 md:py-28 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={fadeInVariant}
+            className="text-center mb-12 md:mb-20"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-5">3주간 우린 이렇게 만나요</h2>
+            <p className="text-[#6B6661] font-light text-base md:text-lg">
+              강연으로 배우고, 소그룹으로 연결되고, 오프라인에서 만납니다.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col items-center gap-4 md:gap-6 pb-8 md:pb-12">
+            {[
+              {
+                week: "1주차", mode: "ZOOM 온라인", speaker: "김상진 목사님",
+                title: "좋은 배우자를 원하십니까, 좋은 배우자가 되고 싶으십니까?",
+                desc: "배우자 만남 전에 선행되어야 할 개인의 성숙",
+                img: kimSangjinImg, date: SESSION_1_DATE,
+                bio: ["21만 유튜브 채널 달빛마을 운영", "CCM 사역팀 달빛마을 운영"],
+                flow: ["목사님 특강 + QnA (40분)", "소그룹 교제 — 2번의 소그룹 모임 (각 40분, 총 80분)", "마무리 — 공지사항 전달 (10분)"],
+              },
+              {
+                week: "2주차", mode: "ZOOM 온라인", speaker: "김수경님",
+                title: "두 사람이 함께 만들어가는 신앙 공동체",
+                desc: "결혼 준비과정 자체가 간증인 크리스천 부부의 이야기",
+                img: kimSukyungImg, date: SESSION_2_DATE,
+                bio: ["크리스천 부부 인스타그램 계정 @give_yourwedding 운영"],
+                flow: ["김수경님 강연 + QnA (40분)", "소그룹 교제 — 2번의 소그룹 모임 (각 40분, 총 80분)", "마무리 — 공지사항 전달 (10분)"],
+              },
+              {
+                week: "3주차", mode: "오프라인", speaker: "지윤 (호스트)",
+                title: "한 걸음 더 가까이",
+                desc: "온라인에서 쌓은 교제를 바탕으로 오프라인에서 더 깊이 알아갑니다.",
+                img: "https://images.unsplash.com/photo-1640037984424-ac1a02cb742a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMGNvZmZlZSUyMHNob3AlMjB0b3AlMjB2aWV3JTIwaGFuZHMlMjB0YWJsZXxlbnwxfHx8fDE3NzU4MjU4NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+                date: SESSION_3_DATE,
+                bio: ["모임 장소는 서울 용산, 강남, 성수 중 선정하여 별도 공지 예정입니다."],
+                flow: ["소그룹별 첫 대면 자리 마련", "프로그램 종료 후 매칭 설문 진행", "상호 매칭된 경우에만 연락처 전달"],
+              },
+            ].map((session, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                variants={fadeInVariant}
+                className="relative overflow-hidden w-full max-w-[800px] bg-[#F4F7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
+              >
+                {session.img && index === 1 && (
+                  <div className="absolute inset-0 z-0 opacity-30">
+                    <img
+                      src={session.img as string}
+                      alt={session.speaker}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: "center 45%" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#F4F7F5]/80 via-[#F4F7F5]/50 to-[#F4F7F5]/30" />
+                  </div>
+                )}
+                {session.img && index !== 1 && (
+                  <div className={`absolute inset-0 z-0 ${index === 2 ? "opacity-25" : "opacity-40"}`}>
+                    <ImageWithFallback
+                      src={session.img}
+                      alt={session.speaker}
+                      className={`w-full h-full object-cover ${index === 2 ? "object-center" : "object-[center_20%]"}`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#F4F7F5]/90 to-[#F4F7F5]/70 mix-blend-multiply" />
+                    <div className={`absolute inset-0 ${index === 2 ? "bg-[#F4F7F5]/75" : "bg-[#F4F7F5]/50"}`} />
+                  </div>
+                )}
+                <div className="relative z-10 flex flex-col justify-between h-full min-h-[260px] md:min-h-[280px] p-6 md:p-8 lg:p-10">
+                  <div className="flex items-center justify-between w-full mb-8 md:mb-10">
+                    <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 bg-white text-[#4A7C6F] rounded-full flex items-center justify-center text-lg md:text-xl font-bold tracking-tighter shadow-sm">
+                      {session.week}
+                    </div>
+                    <div className="bg-white/60 backdrop-blur-md px-4 py-2 md:px-5 md:py-2.5 rounded-full shadow-sm border border-white/40">
+                      <h4 className="text-[#2D5A4F] font-bold text-sm md:text-base tracking-tight flex items-center gap-2">
+                        {index === 2 ? (
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                          </svg>
+                        ) : (
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                          </svg>
+                        )}
+                        {index === 2 ? "네트워킹" : session.speaker}
+                      </h4>
+                    </div>
+                  </div>
+                  <div className="text-left mt-auto w-full md:w-[85%]">
+                    <h3 className="text-xl md:text-2xl lg:text-[26px] font-bold text-gray-900 mb-3 md:mb-4 tracking-tight leading-tight">{session.title}</h3>
+                    <p className="text-[#6B6661] font-light leading-relaxed text-sm md:text-base">{session.desc}</p>
+                    <div className="mt-4 pt-4 border-t border-[#4A7C6F]/20 flex items-center gap-1.5 md:gap-2 text-[#2D5A4F] font-medium text-xs md:text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-4 md:h-4">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                        <line x1="16" x2="16" y1="2" y2="6" />
+                        <line x1="8" x2="8" y1="2" y2="6" />
+                        <line x1="3" x2="21" y1="10" y2="10" />
+                      </svg>
+                      <span>{session.date}</span>
+                      <span className="ml-2 px-2 py-0.5 bg-[#4A7C6F]/10 text-[#4A7C6F] rounded-full text-xs font-semibold uppercase tracking-wide">{session.mode}</span>
+                    </div>
+                    <ul className="mt-4 space-y-1.5 mb-3">
+                      {session.flow.map((line, i) => (
+                        <li key={i} className="text-[#6B6661] text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2">
+                          <span className="text-[#4A7C6F] mt-0.5 flex-shrink-0">–</span>
+                          {line}
+                        </li>
+                      ))}
+                    </ul>
+                    {session.bio.length > 0 && (
+                      <ul className="mt-4 pt-3 border-t border-[#4A7C6F]/30 space-y-1.5">
+                        {session.bio.map((line, i) => (
+                          <li key={i} className="text-[#6B6661] text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2">
+                            <span className="text-[#4A7C6F] mt-0.5 flex-shrink-0">·</span>
+                            {line}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. Why 초원 메이트 */}
+      <section className="py-16 md:py-28 px-6 bg-[#F4F7F5]">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={fadeInVariant}
+            className="text-center mb-12 md:mb-20"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-5">
+              누굴 만날지 걱정하지 마세요
+            </h2>
+            <p className="text-[#6B6661] font-light text-base md:text-lg">
+              초원이 철저히 검증한 분들만 참여할 수 있어요
+            </p>
           </motion.div>
 
           <div className="relative">
@@ -560,307 +763,40 @@ export function LandingPageV3() {
         </div>
       </section>
 
-      {/* 4. Program Details */}
-      <section className="py-16 md:py-28 px-6 bg-[#F4F7F5]">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            variants={fadeInVariant}
-            className="text-center mb-12 md:mb-20"
-          >
-            <span className="text-[#4A7C6F] font-semibold tracking-widest text-xs md:text-sm mb-2 md:mb-3 block uppercase">
-              Program Details
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-5">
-              프로그램 소개
-            </h2>
-            <p className="text-[#6B6661] max-w-2xl mx-auto leading-relaxed font-light text-base md:text-lg">
-              3주간 진솔한 교제로 서로를 알아갈 수 있도록
-              <br />초원은 이렇게 준비했습니다.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            className="flex flex-col gap-3 md:gap-4 pt-6 pb-12"
-          >
-            {[
-              {
-                icon: <Monitor className="w-5 h-5" />,
-                title: "온/오프라인 결합 프로그램",
-                desc: <>1-2회차는 ZOOM으로, 3회차 오프라인 모임으로 점진적으로 가까워지는 교제의 장을 만듭니다.</>,
-              },
-              {
-                icon: <Scale className="w-5 h-5" />,
-                title: "성비 균형",
-                desc: <>1987-1999년생 남녀 각 30명, 총 60명의 밸런스를 맞추어 진행합니다.</>,
-              },
-              {
-                icon: <Users className="w-5 h-5" />,
-                title: "로테이션 소그룹",
-                desc: <>매 회차 소그룹을 변경하여 기간 내 모든 이성과 교제할 시간이 주어집니다.</>,
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInVariant}
-                className="bg-white px-5 py-4 md:px-6 md:py-5 rounded-2xl shadow-[0_2px_12px_rgb(0,0,0,0.04)] flex items-center gap-4"
-              >
-                <div className="w-10 h-10 bg-[#F4F7F5] rounded-full flex items-center justify-center text-[#4A7C6F] flex-shrink-0">
-                  {item.icon}
-                </div>
-                <div className="text-left">
-                  <h3 className="text-sm md:text-base font-bold text-gray-900 tracking-tight mb-0.5">{item.title}</h3>
-                  <p className="text-[#6B6661] font-light text-xs md:text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 5. Curriculum */}
-      <section className="py-16 md:py-28 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            variants={fadeInVariant}
-            className="text-center mb-12 md:mb-20"
-          >
-            <span className="text-[#4A7C6F] font-semibold tracking-widest text-xs md:text-sm mb-2 md:mb-3 block uppercase">Curriculum</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-5">3주간의 여정</h2>
-            <p className="text-[#6B6661] font-light text-base md:text-lg">
-              매주 새로운 게스트와 함께
-              <br />다양한 주제에 대해 교제를 나눕니다.
-            </p>
-          </motion.div>
-
-          <div className="flex flex-col items-center gap-4 md:gap-6 pb-8 md:pb-12">
-            {[
-              {
-                week: "1주차", mode: "온라인", speaker: "김상진 목사님",
-                title: "좋은 배우자를 원하십니까, 좋은 배우자가 되고 싶으십니까?",
-                desc: "배우자 만남 전에 선행되어야 할 개인의 성숙",
-                img: kimSangjinImg, date: SESSION_1_DATE,
-                bio: ["21만 유튜브 채널 달빛마을 운영", "CCM 사역팀 달빛마을 운영"],
-                flow: ["강연 — 목사님 특강 (30분)", "소그룹 교제 — 캠 OFF, 목소리로 첫 만남 (60분)", "마무리 — 후기 설문 (10분)"],
-              },
-              {
-                week: "2주차", mode: "온라인", speaker: "김수경님",
-                title: "두 사람이 함께 만들어가는 신앙 공동체",
-                desc: "결혼 준비과정 자체가 간증인 크리스천 부부의 이야기",
-                img: kimSukyungImg, date: SESSION_2_DATE,
-                bio: ["크리스천 부부 인스타그램 계정 @give_yourwedding 운영"],
-                flow: ["강연 — 게스트 특강 (30분)", "소그룹 교제 — 캠 OFF, 더 깊은 대화 (60분)", "마무리 — 후기 설문 (10분)"],
-              },
-              {
-                week: "3주차", mode: "오프라인", speaker: "지윤 (호스트)",
-                title: "한 걸음 더 가까이",
-                desc: "온라인에서 쌓은 교제를 바탕으로 오프라인에서 더 깊이 알아갑니다.",
-                img: "https://images.unsplash.com/photo-1640037984424-ac1a02cb742a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMGNvZmZlZSUyMHNob3AlMjB0b3AlMjB2aWV3JTIwaGFuZHMlMjB0YWJsZXxlbnwxfHx8fDE3NzU4MjU4NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-                date: SESSION_3_DATE,
-                bio: ["모임 장소는 서울 용산, 강남, 성수 중 선정하여 별도 공지 예정입니다."],
-                flow: ["소그룹별 첫 대면 자리 마련", "프로그램 종료 후 매칭 설문 진행", "상호 매칭된 경우에만 연락처 전달"],
-              },
-            ].map((session, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                variants={fadeInVariant}
-                className="relative overflow-hidden w-full max-w-[800px] bg-[#F4F7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
-              >
-                {session.img && index === 1 && (
-                  <div className="absolute inset-0 z-0 opacity-30">
-                    <img
-                      src={session.img as string}
-                      alt={session.speaker}
-                      className="w-full h-full object-cover"
-                      style={{ objectPosition: "center 45%" }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#F4F7F5]/80 via-[#F4F7F5]/50 to-[#F4F7F5]/30" />
-                  </div>
-                )}
-                {session.img && index !== 1 && (
-                  <div className={`absolute inset-0 z-0 ${index === 2 ? "opacity-25" : "opacity-40"}`}>
-                    <ImageWithFallback
-                      src={session.img}
-                      alt={session.speaker}
-                      className={`w-full h-full object-cover ${index === 2 ? "object-center" : "object-[center_20%]"}`}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#F4F7F5]/90 to-[#F4F7F5]/70 mix-blend-multiply" />
-                    <div className={`absolute inset-0 ${index === 2 ? "bg-[#F4F7F5]/75" : "bg-[#F4F7F5]/50"}`} />
-                  </div>
-                )}
-                <div className="relative z-10 flex flex-col justify-between h-full min-h-[260px] md:min-h-[280px] p-6 md:p-8 lg:p-10">
-                  <div className="flex items-center justify-between w-full mb-8 md:mb-10">
-                    <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 bg-white text-[#4A7C6F] rounded-full flex items-center justify-center text-lg md:text-xl font-bold tracking-tighter shadow-sm">
-                      {session.week}
-                    </div>
-                    <div className="bg-white/60 backdrop-blur-md px-4 py-2 md:px-5 md:py-2.5 rounded-full shadow-sm border border-white/40">
-                      <h4 className="text-[#2D5A4F] font-bold text-sm md:text-base tracking-tight flex items-center gap-2">
-                        {index === 2 ? (
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                          </svg>
-                        ) : (
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
-                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                            <circle cx="12" cy="7" r="4" />
-                          </svg>
-                        )}
-                        {index === 2 ? "네트워킹" : session.speaker}
-                      </h4>
-                    </div>
-                  </div>
-                  <div className="text-left mt-auto w-full md:w-[85%]">
-                    <h3 className="text-xl md:text-2xl lg:text-[26px] font-bold text-gray-900 mb-3 md:mb-4 tracking-tight leading-tight">{session.title}</h3>
-                    <p className="text-[#6B6661] font-light leading-relaxed text-sm md:text-base">{session.desc}</p>
-                    <div className="mt-4 pt-4 border-t border-[#4A7C6F]/20 flex items-center gap-1.5 md:gap-2 text-[#2D5A4F] font-medium text-xs md:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-4 md:h-4">
-                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                        <line x1="16" x2="16" y1="2" y2="6" />
-                        <line x1="8" x2="8" y1="2" y2="6" />
-                        <line x1="3" x2="21" y1="10" y2="10" />
-                      </svg>
-                      <span>{session.date}</span>
-                      <span className="ml-2 px-2 py-0.5 bg-[#4A7C6F]/10 text-[#4A7C6F] rounded-full text-xs font-semibold uppercase tracking-wide">{session.mode}</span>
-                    </div>
-                    <ul className="mt-4 space-y-1.5 mb-3">
-                      {session.flow.map((line, i) => (
-                        <li key={i} className="text-[#6B6661] text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2">
-                          <span className="text-[#4A7C6F] mt-0.5 flex-shrink-0">–</span>
-                          {line}
-                        </li>
-                      ))}
-                    </ul>
-                    {session.bio.length > 0 && (
-                      <ul className="mt-4 pt-3 border-t border-[#4A7C6F]/30 space-y-1.5">
-                        {session.bio.map((line, i) => (
-                          <li key={i} className="text-[#6B6661] text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2">
-                            <span className="text-[#4A7C6F] mt-0.5 flex-shrink-0">·</span>
-                            {line}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Program Flow */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.3 }}
-            className="w-full mt-16 md:mt-24 pt-12 md:pt-16 border-t border-[#C8D8D4]"
-          >
-            <h3 className="text-center text-[#4A7C6F] font-semibold tracking-widest text-xs md:text-sm mb-4 md:mb-6 block uppercase">
-              온라인 프로그램 진행 순서
-            </h3>
-            <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
-              {[
-                { icon: <Mic className="w-8 h-8" />, title: "강연", time: "30분", desc: "게스트의 강연으로\n마음의 기초를 다집니다." },
-                { icon: <Users className="w-8 h-8" />, title: "소그룹 교제", time: "60분", desc: "발제문을 가지고\n소그룹끼리 진솔한 대화를 통해\n서로를 깊이 이해합니다." },
-                { icon: <Check className="w-8 h-8" />, title: "마무리", time: "10분", desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다." },
-              ].map((step, index) => (
-                <div key={index} className="relative flex flex-col items-center">
-                  <motion.div variants={fadeInVariant} className="w-full bg-[#F4F7F5] rounded-2xl p-6 lg:p-8 text-center min-h-[320px] lg:min-h-[340px] flex flex-col items-center justify-center border border-[#E0EBE8]">
-                    <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-5 text-[#4A7C6F] flex-shrink-0">{step.icon}</div>
-                    <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">{step.title}</h4>
-                    <p className="text-[#4A7C6F] font-medium text-base lg:text-lg mb-3 lg:mb-4">{step.time}</p>
-                    <p className="text-[#6B6661] text-sm lg:text-base font-light leading-relaxed whitespace-pre-line">{step.desc}</p>
-                  </motion.div>
-                  {index < 2 && (
-                    <div className="absolute -right-7 lg:-right-8 top-1/2 transform -translate-y-1/2">
-                      <svg className="w-6 h-6 lg:w-8 lg:h-8 text-[#4A7C6F]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="flex md:hidden flex-col items-stretch gap-4">
-              {[
-                { icon: <Mic className="w-7 h-7" />, title: "강연", time: "30분", desc: "게스트의 강연으로\n마음의 기초를 다집니다." },
-                { icon: <Users className="w-7 h-7" />, title: "소그룹 교제", time: "60분", desc: "발제문을 가지고\n소그룹끼리 진솔한 대화를 통해\n서로를 깊이 이해합니다." },
-                { icon: <Check className="w-7 h-7" />, title: "마무리", time: "10분", desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다." },
-              ].map((step, index) => (
-                <div key={index} className="flex flex-col items-stretch">
-                  <motion.div variants={fadeInVariant} className="bg-[#F4F7F5] rounded-xl p-5 text-center border border-[#E0EBE8]">
-                    <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center mx-auto mb-3 text-[#4A7C6F] flex-shrink-0">{step.icon}</div>
-                    <h4 className="text-base font-semibold text-gray-900 mb-1.5">{step.title}</h4>
-                    <p className="text-[#4A7C6F] font-medium text-sm mb-2">{step.time}</p>
-                    <p className="text-[#6B6661] text-xs font-light leading-relaxed whitespace-pre-line">{step.desc}</p>
-                  </motion.div>
-                  {index < 2 && (
-                    <div className="flex justify-center py-3">
-                      <svg className="w-5 h-5 text-[#4A7C6F]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <p className="mt-8 text-center text-sm md:text-base text-[#2D5A4F] font-medium">
-              *오프라인 프로그램 구성은 2회차 마무리 후 별도 공지 예정입니다.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* 6. Special Event */}
       <section className="py-16 md:py-28 px-6 bg-[#F4F7F5] overflow-hidden">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 lg:gap-24">
+        <div className="max-w-3xl mx-auto flex flex-col items-center gap-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
-            className="w-full md:w-1/2"
+            className="w-full text-center"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-[#4A7C6F]/10 rounded-[1.5rem] md:rounded-[2rem] transform translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4" />
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1640092134597-e715cacbc40d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBlYXRpbmclMjBicnVuY2glMjBoYW5kcyUyMG9ubHklMjB3YXJtJTIwbmF0dXJhbCUyMGxpZ2h0fGVufDF8fHx8MTc3NTc3NjcyN3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="자연광이 드는 로맨틱하고 따뜻한 분위기의 식사 모습"
-                className="relative z-10 w-full h-auto aspect-[4/3] object-cover rounded-[1.5rem] md:rounded-[2rem] shadow-md"
-              />
-            </div>
+            <span className="text-[#4A7C6F] font-semibold tracking-[0.2em] text-xs md:text-sm mb-3 md:mb-4 block uppercase">SPECIAL EVENT</span>
+            <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-gray-900 mb-6 md:mb-8 leading-[1.3] tracking-tight">
+              설레는 첫 만남,<br />밥값은 초원이 낼게요
+            </h2>
+            <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] font-light">
+              프로그램이 끝난 후 설문으로 서로를 선택한 두 분께,
+              <br />연락처와 함께 첫 식사비 10만원을 드려요
+            </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
-            className="w-full md:w-1/2 mt-4 md:mt-0"
+            className="w-full"
           >
-            <span className="text-[#4A7C6F] font-semibold tracking-[0.2em] text-xs md:text-sm mb-3 md:mb-4 block uppercase text-center md:text-left">SPECIAL EVENT</span>
-            <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-gray-900 mb-6 md:mb-8 leading-[1.3] tracking-tight text-center md:text-left">
-              최종 매칭 성공시<br />식사비용 10만원 지원
-            </h2>
-            <p className="text-[#6B6661] text-base md:text-lg leading-[1.7] md:leading-[1.8] mb-4 md:mb-6 font-light text-center md:text-left">
-              마지막 회차 종료후 설문을 통해
-              <br />더 알아가고 싶은 분을 선택하게됩니다.
-              <br />최종 매칭에 성공하신 경우,
-              <br />연락처 및 식사 비용 10만원을 지급해드립니다.
-            </p>
+            <div className="relative">
+              <div className="absolute inset-0 bg-[#4A7C6F]/10 rounded-[1.5rem] md:rounded-[2rem] transform translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4" />
+              <ImageWithFallback
+                src={matchingDinnerImg}
+                alt="매칭 식사 이미지"
+                className="relative z-10 w-full h-auto aspect-[4/3] object-cover rounded-[1.5rem] md:rounded-[2rem] shadow-md"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -1006,12 +942,25 @@ export function LandingPageV3() {
             >
               <h3 className="text-xs md:text-sm font-bold text-[#4A7C6F] tracking-widest uppercase mb-4">{group.category}</h3>
               <div className="flex flex-col gap-3">
-                {group.items.map((item, ii) => (
-                  <div key={ii} className="bg-white rounded-2xl px-6 py-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-[#E0EBE8]">
-                    <p className="font-semibold text-gray-900 text-sm md:text-base mb-2 leading-snug">Q. {item.q}</p>
-                    <p className="text-[#6B6661] font-light text-sm md:text-base leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
+                {group.items.map((item, ii) => {
+                  const faqKey = `${gi}-${ii}`;
+                  return (
+                    <div key={ii} className="bg-white rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-[#E0EBE8] overflow-hidden">
+                      <button
+                        onClick={() => setOpenFaq(openFaq === faqKey ? null : faqKey)}
+                        className="w-full flex items-center justify-between px-6 py-5 text-left"
+                      >
+                        <p className="font-semibold text-gray-900 text-sm md:text-base leading-snug pr-4">Q. {item.q}</p>
+                        <ChevronDown className={`w-4 h-4 text-[#4A7C6F] flex-shrink-0 transition-transform duration-300 ${openFaq === faqKey ? "rotate-180" : ""}`} />
+                      </button>
+                      {openFaq === faqKey && (
+                        <div className="px-6 pb-5 border-t border-[#E0EBE8]">
+                          <p className="text-[#6B6661] font-light text-sm md:text-base leading-relaxed pt-4">{item.a}</p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </motion.div>
           ))}
