@@ -101,7 +101,7 @@ export function LandingPageV3() {
             variants={heroFadeVariant}
             className="text-xs sm:text-sm tracking-wide text-white/85 mb-5 md:mb-7 drop-shadow-md"
           >
-            80만 크리스천이 사용하는 초원이 만든 매칭 프로그램
+            80만 크리스천의 선택, 초원이 만든 매칭 프로그램
           </motion.p>
 
           {/* 메인카피 — 가장 크게 */}
