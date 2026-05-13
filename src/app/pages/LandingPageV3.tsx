@@ -87,20 +87,20 @@ const whyItems = [
   {
     icon: <Shield className="w-7 h-7" />,
     title: "검증된 프로필 매칭",
-    desc: "80만 명이 사용하는 초원성경앱의 신앙 데이터 기반으로 크리스천임을 검증하고, 프로필 검토를 통해 참가자 매칭을 위한 밸런스를 조율합니다.",
-    points: ["신앙 데이터 기반 검증", "이단 필터링", "매칭을 위한 철저한 프로필 검토"],
+    desc: <>초원성경앱의 신앙 데이터 기반으로 크리스천임을 검증하고,<br />프로필 검토를 통해 참가자 매칭을 위한 밸런스를 조율합니다.</>,
+    points: ["이단·비크리스천 사전 차단", "비슷한 연령대 관심사 기반 조배정", "참가 전 프로필 직접 검토"],
   },
   {
     icon: <MessageCircle className="w-7 h-7" />,
     title: "대화로 알아가는 신앙 가치관",
-    desc: "발제문이 제공되어 스몰토크 걱정 없이 대화를 시작할 수 있습니다. 신앙, 가치관, 인생관을 깊이 있게 나누며 진정성 있는 만남이 시작됩니다.",
-    points: ["발제문 기반 토론", "깊이 있는 대화", "신앙 가치관 자연스럽게 확인"],
+    desc: <>카메라 OFF로 진행되는 온라인 세션에선 소그룹 발제문을 제공합니다.<br />스몰토크 걱정 없이 신앙, 가치관, 인생관을 깊이 있게 나누며<br />진정성 있는 만남이 시작됩니다.</>,
+    points: ["발제문 기반 토론", "깊이 있는 대화", "서로를 깊이 알아가는 과정"],
   },
   {
     icon: <Lock className="w-7 h-7" />,
     title: "철저한 개인정보 보호",
-    desc: "소개팅 앱처럼 사전에 정보를 공개하지 않습니다. 연락처는 양쪽이 모두 선택했을 때만 공유되며, 프로그램 진행 외에는 어떤 정보도 공개되지 않습니다.",
-    points: ["선택적 정보 공개", "철저한 보안", "신뢰할 수 있는 플랫폼"],
+    desc: <>소개팅 앱처럼 참가자 사진 및 정보를 공개하지 않습니다.<br />프로그램 기간 동안 서로 닉네임으로 소통하며,<br />연락처는 양측이 서로를 선택했을 때만 공유됩니다.</>,
+    points: ["프로필·연락처 사전 비공개", "매칭 성공 시에만 연락처 공유", "프로그램 외 용도로 정보 미사용"],
   },
 ];
 
@@ -326,46 +326,6 @@ export function LandingPageV3() {
             </motion.p>
           </motion.div>
 
-          {/* 대표 인용문 */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
-            className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16"
-          >
-            <div className="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center md:items-start">
-              <div className="relative max-w-[300px] md:max-w-none">
-                <div className="absolute inset-0 bg-[#4A7C6F]/10 rounded-[2rem] transform translate-x-4 translate-y-4" />
-                <div className="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg group">
-                  <ImageWithFallback
-                    src={jiyunImg}
-                    alt="초원메이트 기획자 이지윤"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#C8D8D4]/25 via-transparent to-[#9FBFB8]/15 mix-blend-multiply" />
-                </div>
-              </div>
-              <div className="md:hidden mt-6 text-center">
-                <p className="text-base font-bold text-[#4A7C6F] tracking-wide">초원메이트 기획자 이지윤</p>
-              </div>
-            </div>
-
-            <div className="w-full md:w-1/2 flex flex-col text-center md:text-left">
-              <div className="hidden md:block mb-6">
-                <p className="text-lg font-bold text-[#4A7C6F] tracking-wide">초원메이트 기획자 이지윤</p>
-              </div>
-              <p className="text-base sm:text-lg md:text-xl leading-[1.9] md:leading-[1.95] text-[#2D2A26] font-light">
-                "저 역시 결혼적령기 크리스천으로서 이 고민을 깊이 압니다.{" "}
-                초원 80만 크리스천의 신앙 데이터와 커뮤니티를 운영하면서, 크리스천 청년들의 가장 큰 고민이 연애와 결혼이라는 것을 수없이 목격했습니다."
-              </p>
-              <p className="text-base sm:text-lg md:text-xl leading-[1.9] md:leading-[1.95] text-[#2D2A26] font-light mt-4">
-                "<strong className="font-semibold text-[#4A7C6F]">초원메이트는 한 번의 휘발성 이벤트가 아니라, 신앙 안에서 좋은 만남이 이루어지는 과정을 제공하는 프로그램입니다.</strong>"
-              </p>
-            </div>
-          </motion.div>
-
-          {/* 정보 안내 박스 */}
         </div>
       </section>
 
@@ -553,6 +513,53 @@ export function LandingPageV3() {
         </div>
       </section>
 
+      {/* 기획자 이지윤 */}
+      <section className="py-16 md:py-28 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
+            className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16"
+          >
+            <div className="w-full md:w-1/3 flex-shrink-0 flex flex-col items-center md:items-start">
+              <div className="relative max-w-[300px] md:max-w-none">
+                <div className="absolute inset-0 bg-[#4A7C6F]/10 rounded-[2rem] transform translate-x-4 translate-y-4" />
+                <div className="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg group">
+                  <ImageWithFallback
+                    src={jiyunImg}
+                    alt="초원메이트 기획자 이지윤"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#C8D8D4]/25 via-transparent to-[#9FBFB8]/15 mix-blend-multiply" />
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full md:w-1/2 flex flex-col text-center md:text-left">
+              <p className="text-xs font-semibold text-[#4A7C6F] tracking-widest uppercase mb-1">
+                초원메이트 기획자
+              </p>
+              <p className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-3">
+                이지윤
+              </p>
+              <div className="border-t border-[#C8D8D4] pt-6">
+                <p className="text-sm leading-[1.9] text-[#2D2A26] font-light">
+                  초원 80만 사용자분들이 가장 많이 문의하시는 내용은 늘 연애와 결혼입니다.
+                </p>
+                <p className="text-sm leading-[1.9] text-[#2D2A26] font-light mt-3">
+                  그 고민을 오래 들어온 초원이, 신앙 안에서 진지한 만남을 원하는 분들을 위해 직접 자리를 만들었습니다.
+                </p>
+                <p className="text-sm leading-[1.9] text-[#2D2A26] font-light mt-3">
+                  <strong className="font-semibold text-[#4A7C6F]">3주간 천천히, 깊게 서로를 알아가는 시간으로 진짜 신앙 속에서의 만남을 이루시길 소망합니다.</strong>
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* 4. Program Details */}
       <section className="py-16 md:py-28 px-6 bg-[#F4F7F5]">
         <div className="max-w-6xl mx-auto">
@@ -580,35 +587,37 @@ export function LandingPageV3() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
-            className="flex flex-col md:flex-row gap-5 md:gap-8 pt-6 pb-12"
+            className="flex flex-col gap-3 md:gap-4 pt-6 pb-12"
           >
             {[
               {
-                icon: <Monitor className="w-7 h-7" />,
+                icon: <Monitor className="w-5 h-5" />,
                 title: "온/오프라인 결합 프로그램",
-                desc: <>1-2회차는 ZOOM으로, 3회차 오프라인 모임으로<br />점진적으로 가까워지는 교제의 장을 만듭니다.</>,
+                desc: <>1-2회차는 ZOOM으로, 3회차 오프라인 모임으로 점진적으로 가까워지는 교제의 장을 만듭니다.</>,
               },
               {
-                icon: <Scale className="w-7 h-7" />,
+                icon: <Scale className="w-5 h-5" />,
                 title: "성비 균형",
-                desc: <>1987-1999년생 남녀 각 30명,<br />총 60명의 밸런스를 맞추어 진행합니다.</>,
+                desc: <>1987-1999년생 남녀 각 30명, 총 60명의 밸런스를 맞추어 진행합니다.</>,
               },
               {
-                icon: <Users className="w-7 h-7" />,
+                icon: <Users className="w-5 h-5" />,
                 title: "로테이션 소그룹",
-                desc: <>매 회차 소그룹을 변경하여 기간 내<br />모든 이성과 교제할 시간이 주어집니다.</>,
+                desc: <>매 회차 소그룹을 변경하여 기간 내 모든 이성과 교제할 시간이 주어집니다.</>,
               },
             ].map((item, index) => (
               <motion.div
                 key={index}
                 variants={fadeInVariant}
-                className="bg-white p-8 md:p-12 rounded-[1.5rem] md:rounded-[2rem] shadow-[0_2px_20px_rgb(0,0,0,0.03)] text-center transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] w-full md:flex-1 cursor-pointer"
+                className="bg-white px-5 py-4 md:px-6 md:py-5 rounded-2xl shadow-[0_2px_12px_rgb(0,0,0,0.04)] flex items-center gap-4"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#F4F7F5] rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8 text-[#4A7C6F] flex-shrink-0">
+                <div className="w-10 h-10 bg-[#F4F7F5] rounded-full flex items-center justify-center text-[#4A7C6F] flex-shrink-0">
                   {item.icon}
                 </div>
-                <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-900 tracking-tight">{item.title}</h3>
-                <p className="text-[#6B6661] leading-relaxed font-light text-sm md:text-base">{item.desc}</p>
+                <div className="text-left">
+                  <h3 className="text-sm md:text-base font-bold text-gray-900 tracking-tight mb-0.5">{item.title}</h3>
+                  <p className="text-[#6B6661] font-light text-xs md:text-sm leading-relaxed">{item.desc}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -633,13 +642,7 @@ export function LandingPageV3() {
             </p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            className="flex flex-col items-center gap-4 md:gap-6 pb-8 md:pb-12"
-          >
+          <div className="flex flex-col items-center gap-4 md:gap-6 pb-8 md:pb-12">
             {[
               {
                 week: "1주차", mode: "온라인", speaker: "김상진 목사님",
@@ -647,6 +650,7 @@ export function LandingPageV3() {
                 desc: "배우자 만남 전에 선행되어야 할 개인의 성숙",
                 img: kimSangjinImg, date: SESSION_1_DATE,
                 bio: ["21만 유튜브 채널 달빛마을 운영", "CCM 사역팀 달빛마을 운영"],
+                flow: ["강연 — 목사님 특강 (30분)", "소그룹 교제 — 캠 OFF, 목소리로 첫 만남 (60분)", "마무리 — 후기 설문 (10분)"],
               },
               {
                 week: "2주차", mode: "온라인", speaker: "김수경님",
@@ -654,6 +658,7 @@ export function LandingPageV3() {
                 desc: "결혼 준비과정 자체가 간증인 크리스천 부부의 이야기",
                 img: kimSukyungImg, date: SESSION_2_DATE,
                 bio: ["크리스천 부부 인스타그램 계정 @give_yourwedding 운영"],
+                flow: ["강연 — 게스트 특강 (30분)", "소그룹 교제 — 캠 OFF, 더 깊은 대화 (60분)", "마무리 — 후기 설문 (10분)"],
               },
               {
                 week: "3주차", mode: "오프라인", speaker: "지윤 (호스트)",
@@ -662,10 +667,14 @@ export function LandingPageV3() {
                 img: "https://images.unsplash.com/photo-1640037984424-ac1a02cb742a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMGNvZmZlZSUyMHNob3AlMjB0b3AlMjB2aWV3JTIwaGFuZHMlMjB0YWJsZXxlbnwxfHx8fDE3NzU4MjU4NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
                 date: SESSION_3_DATE,
                 bio: ["모임 장소는 서울 용산, 강남, 성수 중 선정하여 별도 공지 예정입니다."],
+                flow: ["소그룹별 첫 대면 자리 마련", "프로그램 종료 후 매칭 설문 진행", "상호 매칭된 경우에만 연락처 전달"],
               },
             ].map((session, index) => (
               <motion.div
                 key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
                 variants={fadeInVariant}
                 className="relative overflow-hidden w-full max-w-[800px] bg-[#F4F7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
               >
@@ -728,6 +737,14 @@ export function LandingPageV3() {
                       <span>{session.date}</span>
                       <span className="ml-2 px-2 py-0.5 bg-[#4A7C6F]/10 text-[#4A7C6F] rounded-full text-xs font-semibold uppercase tracking-wide">{session.mode}</span>
                     </div>
+                    <ul className="mt-4 space-y-1.5 mb-3">
+                      {session.flow.map((line, i) => (
+                        <li key={i} className="text-[#6B6661] text-xs md:text-sm font-medium leading-relaxed flex items-start gap-2">
+                          <span className="text-[#4A7C6F] mt-0.5 flex-shrink-0">–</span>
+                          {line}
+                        </li>
+                      ))}
+                    </ul>
                     {session.bio.length > 0 && (
                       <ul className="mt-4 pt-3 border-t border-[#4A7C6F]/30 space-y-1.5">
                         {session.bio.map((line, i) => (
@@ -742,7 +759,7 @@ export function LandingPageV3() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Program Flow */}
           <motion.div

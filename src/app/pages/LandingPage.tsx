@@ -8,13 +8,20 @@ import {
   Check,
   ArrowRight,
   Mic,
+  Shield,
+  Lock,
+  MessageCircle,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import jangPastorImg from "../../assets/jang-pastor.jpg";
-import leeSojeongImg from "../../assets/lee-sojeong.jpg";
+import kimSangjinImg from "../../assets/김상진목사님.jpeg";
 import appLogoImg from "../../assets/앱로고.png";
 import minJoonImg from "../../assets/민준0678.jpg";
 import heroBgImg from "../../assets/히어로섹션배경.png";
+
+const SIGNUP_URL = "https://www.latpeed.com/products/tDNWy";
+const SESSION_1_DATE = "6월 13일 토요일 19시";
+const SESSION_2_DATE = "6월 20일 토요일 19시";
+const SESSION_3_DATE = "6월 27일 토요일 19시";
 
 const fadeInVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -88,7 +95,7 @@ export function LandingPage() {
             </span>
             <div className="w-full max-w-[400px] h-px bg-white/40 mb-4 md:mb-6"></div>
             <p className="text-center text-lg sm:text-xl md:text-3xl font-normal opacity-95 leading-relaxed drop-shadow mb-3 md:mb-5 max-w-[400px] w-full">
-              신앙 안에서 인연을 찾아가는 특별한 여정
+              신앙 안에서의 진지한 만남
             </p>
           </motion.div>
 
@@ -100,7 +107,7 @@ export function LandingPage() {
           </motion.h1>
         </motion.div>
 
-        {/* Scroll down indicator - 버튼 + 텍스트 + 화살표 */}
+        {/* Scroll down indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -113,7 +120,7 @@ export function LandingPage() {
             className="flex flex-col items-center gap-4"
           >
             <motion.a
-              href="https://www.latpeed.com/products/B4Jq4"
+              href={SIGNUP_URL}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -135,7 +142,7 @@ export function LandingPage() {
         </motion.div>
       </header>
 
-      {/* 2. Problem Statement (Our Reality) */}
+      {/* 2. Our Reality */}
       <section className="py-20 md:py-32 px-6 bg-[#FAF7F5]">
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-12 lg:gap-16">
           <motion.div
@@ -274,10 +281,103 @@ export function LandingPage() {
               </p>
             </div>
           </motion.div>
+
+          {/* 정보 안내 박스 */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
+            className="w-full flex justify-center"
+          >
+            <div className="bg-white px-6 py-5 md:px-8 md:py-6 rounded-2xl border border-[#D68C82]/20 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
+              <p className="text-[13px] md:text-base text-[#8A5A53] font-medium leading-relaxed">
+                결제 시 나이, 직업, 키, 출석 교회, 모태신앙 여부,
+                <br />그리고 세부 가치관 등 정보를 수집하여
+                <br />초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
+              </p>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
-      {/* 3. Program Details */}
+      {/* 3. Why 초원 메이트 */}
+      <section className="py-16 md:py-28 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={fadeInVariant}
+            className="text-center mb-12 md:mb-20"
+          >
+            <span className="text-[#D68C82] font-semibold tracking-widest text-xs md:text-sm mb-2 md:mb-3 block uppercase">
+              Why 초원 메이트
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-5">
+              초원 메이트가 다른 이유
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8"
+          >
+            {[
+              {
+                icon: <Shield className="w-7 h-7" />,
+                title: "철저한 프로필 검토와 매칭",
+                desc: "80만 명이 사용하는 초원성경앱의 신앙 데이터 기반으로 크리스천임을 검증하고, 프로필 검토를 통해 참가자 매칭을 위한 밸런스를 조율합니다.",
+                points: ["신앙 데이터 기반 검증", "이단 필터링", "매칭을 위한 철저한 프로필 검토"],
+              },
+              {
+                icon: <Users className="w-7 h-7" />,
+                title: "교회 공동체와 완전히 분리된 만남",
+                desc: "같은 교회 교인끼리 마주치지 않도록 매칭됩니다. 공동체 관계에 영향 없이 만남 자체에만 집중할 수 있습니다.",
+                points: ["공동체와 완전 분리", "소문 걱정 없음", "실패해도 일상에 영향 없음"],
+              },
+              {
+                icon: <Lock className="w-7 h-7" />,
+                title: "철저히 보호되는 개인정보",
+                desc: "소개팅 앱처럼 사전에 정보를 공개하지 않습니다. 연락처는 양쪽이 모두 선택했을 때만 공유되며, 프로그램 진행 외에는 어떤 정보도 공개되지 않습니다.",
+                points: ["선택적 정보 공개", "철저한 보안", "신뢰할 수 있는 플랫폼"],
+              },
+              {
+                icon: <MessageCircle className="w-7 h-7" />,
+                title: "신앙 가치관을 자연스럽게 나누는 구조",
+                desc: "발제문이 제공되어 스몰토크 걱정 없이 대화를 시작할 수 있습니다. 신앙, 가치관, 인생관을 깊이 있게 나누며 진정성 있는 만남이 시작됩니다.",
+                points: ["발제문 기반 토론", "깊이 있는 대화", "신앙 가치관 자연스럽게 확인"],
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInVariant}
+                className="bg-[#FAF7F5] p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 text-[#D68C82] shadow-sm flex-shrink-0">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-gray-900 tracking-tight">{item.title}</h3>
+                <p className="text-[#6B6661] leading-relaxed font-light text-sm md:text-base mb-5">{item.desc}</p>
+                <ul className="space-y-2">
+                  {item.points.map((point, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-[#D68C82] font-medium">
+                      <Check className="w-4 h-4 stroke-[3] flex-shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4. Program Details */}
       <section className="py-16 md:py-28 px-6 bg-[#FAF7F5]">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -360,7 +460,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* 4. Curriculum */}
+      {/* 5. Curriculum */}
       <section className="py-16 md:py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -394,31 +494,31 @@ export function LandingPage() {
               {
                 week: "1주차",
                 mode: "온라인",
-                speaker: "장재기 목사님",
-                title: "하나님이 디자인하신 사랑과 관계",
-                desc: "성경적 사랑과 관계의 본질을 탐구하고, 나에게 맞는 인연을 분별하는 영적 지혜를 배웁니다.",
-                img: jangPastorImg,
-                date: "5월 2일 토요일 19시",
-                bio: ["<따라하는 기도> 저자", "팔로잉 미니스트리 대표", "초원 기도하기 개발 참여"],
+                speaker: "김상진 목사님",
+                title: "좋은 배우자를 원하십니까, 좋은 배우자가 되고 싶으십니까?",
+                desc: "배우자 만남 전에 선행되어야 할 개인의 성숙",
+                img: kimSangjinImg,
+                date: SESSION_1_DATE,
+                bio: ["21만 유튜브 채널 달빛마을 운영", "CCM 사역팀 달빛마을 운영"],
               },
               {
                 week: "2주차",
                 mode: "온라인",
-                speaker: "이소정 작가님",
-                title: "크리스천의 연애와 결혼",
-                desc: "신앙 안에서의 건강한 연애와 결혼을 이야기합니다.",
-                img: leeSojeongImg,
-                date: "5월 8일 금요일 19시",
-                bio: ["<하나님, 저희 잘 가고 있는 거 맞나요?> 저자", "크리스천 부부 인스타그램 계정 '나는 바보양' 운영"],
+                speaker: "Coming soon",
+                title: "두 사람이 함께 만들어가는 신앙 공동체",
+                desc: "크리스천 커플, 부부로서 만들어가는 가정 공동체에 대한 이야기",
+                img: null,
+                date: SESSION_2_DATE,
+                bio: ["실제 크리스천 부부와 함께 크리스천의 결혼생활에 대해 이야기합니다"],
               },
               {
                 week: "3주차",
                 mode: "오프라인",
                 speaker: "지윤 (호스트)",
                 title: "한 걸음 더 가까이",
-                desc: "여러가지 발제문을 두고 남녀 참가자가 로테이션으로 교제합니다.",
+                desc: "온라인에서 쌓은 교제를 바탕으로 오프라인에서 더 깊이 알아갑니다.",
                 img: "https://images.unsplash.com/photo-1640037984424-ac1a02cb742a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMGNvZmZlZSUyMHNob3AlMjB0b3AlMjB2aWV3JTIwaGFuZHMlMjB0YWJsZXxlbnwxfHx8fDE3NzU4MjU4NDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-                date: "5월 16일 토요일 19시",
+                date: SESSION_3_DATE,
                 bio: ["모임 장소는 서울 용산, 강남, 성수 중 선정하여 별도 공지 예정입니다."],
               },
             ].map((session, index) => {
@@ -429,14 +529,14 @@ export function LandingPage() {
                   className="relative overflow-hidden w-full max-w-[800px] bg-[#FAF7F5] rounded-2xl md:rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
                 >
                   {session.img && (
-                    <div className="absolute inset-0 z-0 opacity-40">
+                    <div className={`absolute inset-0 z-0 ${index === 2 ? "opacity-25" : "opacity-40"}`}>
                       <ImageWithFallback
                         src={session.img}
                         alt={session.speaker}
                         className={`w-full h-full object-cover ${index === 2 ? "object-center" : "object-[center_20%]"}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-[#FAF7F5]/90 to-[#FAF7F5]/70 mix-blend-multiply" />
-                      <div className="absolute inset-0 bg-[#FAF7F5]/50" />
+                      <div className={`absolute inset-0 ${index === 2 ? "bg-[#FAF7F5]/75" : "bg-[#FAF7F5]/50"}`} />
                     </div>
                   )}
 
@@ -519,8 +619,8 @@ export function LandingPage() {
                 { icon: <Check className="w-8 h-8" />, title: "마무리", time: "10분", desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다." },
               ].map((step, index) => (
                 <div key={index} className="relative flex flex-col items-center">
-                  <motion.div variants={fadeInVariant} className="w-full bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-[#F2EBE9] text-center min-h-[320px] lg:min-h-[340px] flex flex-col items-center justify-center">
-                    <div className="w-12 h-12 lg:w-14 lg:h-14 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-5 text-[#D68C82] flex-shrink-0">{step.icon}</div>
+                  <motion.div variants={fadeInVariant} className="w-full bg-[#FAF7F5] rounded-2xl p-6 lg:p-8 text-center min-h-[320px] lg:min-h-[340px] flex flex-col items-center justify-center border border-[#F2EBE9]">
+                    <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-5 text-[#D68C82] flex-shrink-0">{step.icon}</div>
                     <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">{step.title}</h4>
                     <p className="text-[#D68C82] font-medium text-base lg:text-lg mb-3 lg:mb-4">{step.time}</p>
                     <p className="text-[#6B6661] text-sm lg:text-base font-light leading-relaxed whitespace-pre-line">{step.desc}</p>
@@ -542,8 +642,8 @@ export function LandingPage() {
                 { icon: <Check className="w-7 h-7" />, title: "마무리", time: "10분", desc: "본 회차에 대한 후기 설문을\n배포하고 마무리합니다." },
               ].map((step, index) => (
                 <div key={index} className="flex flex-col items-stretch">
-                  <motion.div variants={fadeInVariant} className="bg-white rounded-xl p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] border border-[#F2EBE9] text-center">
-                    <div className="w-11 h-11 bg-[#FAF7F5] rounded-full flex items-center justify-center mx-auto mb-3 text-[#D68C82] flex-shrink-0">{step.icon}</div>
+                  <motion.div variants={fadeInVariant} className="bg-[#FAF7F5] rounded-xl p-5 text-center border border-[#F2EBE9]">
+                    <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center mx-auto mb-3 text-[#D68C82] flex-shrink-0">{step.icon}</div>
                     <h4 className="text-base font-semibold text-gray-900 mb-1.5">{step.title}</h4>
                     <p className="text-[#D68C82] font-medium text-sm mb-2">{step.time}</p>
                     <p className="text-[#6B6661] text-xs font-light leading-relaxed whitespace-pre-line">{step.desc}</p>
@@ -565,6 +665,7 @@ export function LandingPage() {
         </div>
       </section>
 
+      {/* 6. Special Event */}
       <section className="py-16 md:py-28 px-6 bg-[#FAF7F5] overflow-hidden">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 lg:gap-24">
           <motion.div
@@ -604,7 +705,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* 6. Target & Guidelines */}
+      {/* 7. Target & Guidelines */}
       <section className="py-16 md:py-28 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
           <motion.div
@@ -636,7 +737,6 @@ export function LandingPage() {
               {[
                 { label: "참가비", desc: "15만원" },
                 { label: "결제방식", desc: "카드결제 (무이자 할부 결제 지원)" },
-                { label: "환불 규정", desc: "4월 25일(토) 23:59까지 전액 환불, 이후 불가" },
                 { label: "No-Show 패널티", desc: "무단 불참 시 다음 회차 참가 자격 박탈" },
                 { label: "사전 질문 & 후기", desc: "회차별 진행 예정." },
               ].map((item, i) => (
@@ -653,9 +753,36 @@ export function LandingPage() {
             </ul>
           </motion.div>
         </div>
+
+        {/* 환불 안내 */}
+        <div className="max-w-4xl mx-auto mt-10 md:mt-14 px-2">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={fadeInVariant}
+            className="bg-[#FFF8F0] border border-[#F0C080]/40 rounded-2xl p-6 md:p-8"
+          >
+            <p className="text-sm md:text-base font-bold text-[#B45309] mb-4">(중요) 환불 안내</p>
+            <div className="space-y-4 text-sm md:text-base text-[#6B6661] font-light leading-relaxed">
+              <p>
+                1기 티켓의 빠른 매진, 그리고 마감직전 단순변심으로 인한 환불로 다른 참가자분들의 여러차례 사이트에서 티켓 재고를 확인해야하는 어려움이 있었습니다.
+              </p>
+              <p>
+                보다 원활한 티켓 판매를 위해 부득이하게 환불기간을 결제일 기준 3일이내로 조정하여 운영되며, 해당기간 이후 환불은 불가하니 참여 여부에 대해 심사숙고후 결제해주시면 너무 감사드리겠습니다 :-)
+              </p>
+              <p>
+                보다 풍성한 프로그램을 위해 초원지기들도 최선을 다하겠습니다.
+              </p>
+              <p className="text-xs md:text-sm text-[#9CA3AF] pt-2 border-t border-[#F0C080]/40">
+                *원활한 프로그램 진행을 위해 5월 31일 23:59이후는 구매 3일내 이시더라도 환불이 불가하니 5월말 구매하시는 분들은 참고 부탁드립니다.
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* FAQ */}
+      {/* 8. FAQ */}
       <section className="py-16 md:py-28 px-6 bg-[#FAF7F5]">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -675,13 +802,13 @@ export function LandingPage() {
               items: [
                 { q: "초원성경 앱을 꼭 사용해야 하나요?", a: "네 맞습니다. 카카오톡으로 3초 로그인 가능하니 가입 후 신청해주세요!" },
                 { q: "비신자도 참가할 수 있나요?", a: "본 행사는 크리스천 청년 대상으로, 등록교회가 있으신 경우 초원 가입 후 신청 가능합니다." },
-                { q: "정원이 다 차면 어떻게 되나요?", a: "4월 25일 23:59까지 환불 건 발생 시 추가 모집 예정입니다." },
+                { q: "정원이 다 차면 어떻게 되나요?", a: "6월 1일 00시 이후 잔여좌석 발생 시 추가 모집 예정입니다." },
               ],
             },
             {
               category: "일정/진행 관련",
               items: [
-                { q: "3번 모임에 모두 참석해야 하나요?", a: "1-2회차 참석하신 분들에 한해 3회차 오프라인 모임 참석 권한이 부여됩니다." },
+                { q: "3번 모임에 모두 참석해야 하나요?", a: "본 프로그램은 신앙 안에서 연애와 결혼, 사랑에 대해 공부하고, 교류하는 커리큘럼으로, 1,2회차 모두 참석하신분들에 대해서만 3회차 오프라인 모임 참석 권한이 주어집니다." },
                 { q: "ZOOM 링크는 언제 공유되나요?", a: "참가 확정자분들께 별도 문자 안내 예정입니다." },
                 { q: "오프라인 장소는 어디인가요?", a: "2회차 종료 후 참석 대상자분들께 별도 공지 예정입니다." },
               ],
@@ -729,9 +856,9 @@ export function LandingPage() {
             </motion.div>
           ))}
 
-          <p className="text-center text-sm md:text-base text-[#6B6661] font-light mt-8 md:mt-12">
+          <p className="text-center text-sm md:text-base text-[#6B6661] font-light mt-4">
             이 외 문의사항은{" "}
-            <a href="https://chowon.channel.io" target="_blank" rel="noopener noreferrer" className="font-bold text-[#D68C82]">
+            <a href="https://chowon.channel.io" target="_blank" rel="noopener noreferrer" className="font-bold text-[#D68C82] underline underline-offset-2">
               초원 고객센터
             </a>
             로 문의바랍니다.
@@ -739,10 +866,10 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* 7. CTA */}
-      <section className="py-20 md:py-36 px-6 text-center relative overflow-hidden flex items-center justify-center min-h-[50vh] md:min-h-[60vh] bg-[#FAF7F5]">
+      {/* 9. CTA */}
+      <section className="py-20 md:py-36 px-6 text-center relative overflow-hidden flex items-center justify-center min-h-[40vh] md:min-h-[50vh] bg-[#FAF7F5]">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply"
+          className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-multiply"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" }}
         />
         <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" />
@@ -752,27 +879,15 @@ export function LandingPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           variants={fadeInVariant}
-          className="relative z-10 max-w-4xl mx-auto flex flex-col items-center"
+          className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-8 md:gap-10"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-[44px] font-bold text-gray-900 mb-4 md:mb-6 leading-[1.3] tracking-tight">
-            지금, 당신의 인연을 향한
-            <br />첫걸음을 내딛으세요
+          <h2 className="text-2xl sm:text-3xl md:text-[44px] font-bold text-gray-900 leading-[1.3] tracking-tight text-center">
+            신앙안에서 만날 새로운 인연,
+            <br />초원이 함께합니다.
           </h2>
-          <p className="text-base md:text-xl text-[#6B6661] mb-8 md:mb-10 font-light leading-relaxed px-4 md:px-0">
-            초원의 새로운 프로젝트 &lt;초원 메이트&gt;는
-            <br />신앙 안에서 사랑을 꿈꾸는 당신을 초대합니다.
-          </p>
-
-          <div className="bg-white/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-5 rounded-2xl mb-8 md:mb-12 border border-[#D68C82]/30 shadow-sm flex items-center justify-center text-center max-w-2xl w-full">
-            <p className="text-[13px] md:text-base text-[#8A5A53] font-medium leading-relaxed">
-              결제 시 나이, 직업, 키, 출석 교회, 모태신앙 여부,
-              <br />그리고 세부 가치관 등 정보를 수집하여
-              <br />초원지기들이 꼼꼼히 검토 및 매칭해드릴 예정입니다.
-            </p>
-          </div>
 
           <motion.a
-            href="https://www.latpeed.com/products/B4Jq4"
+            href={SIGNUP_URL}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

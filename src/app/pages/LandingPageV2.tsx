@@ -116,7 +116,7 @@ export function LandingPageV2() {
             className="flex flex-col items-center gap-4"
           >
             <motion.a
-              href="https://www.latpeed.com/products/B4Jq4"
+              href="https://www.latpeed.com/products/tDNWy"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -796,7 +796,7 @@ export function LandingPageV2() {
           </h2>
 
           <motion.a
-            href="https://www.latpeed.com/products/B4Jq4"
+            href="https://www.latpeed.com/products/tDNWy"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
