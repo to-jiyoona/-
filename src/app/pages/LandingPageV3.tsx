@@ -18,7 +18,7 @@ import kimSukyungImg from "../../assets/김수경님.jpeg";
 import leeSojeongImg from "../../assets/lee-sojeong.jpg";
 import appLogoImg from "../../assets/앱로고.png";
 import jiyunImg from "../../assets/지윤.png";
-import heroBgImg from "../../assets/히어로섹션배경_6월.png";
+import heroBgImg from "../../assets/히어로섹션배경_6월.jpg";
 import matchingDinnerImg from "../../assets/매칭식사.png";
 import female1Img from "../../assets/여성1.png";
 import female2Img from "../../assets/여성2.png";
