@@ -279,6 +279,17 @@ export function LandingPage() {
 
           {/* 대표 인용문 */}
           <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="w-full text-center mb-10"
+          >
+            <p className="text-2xl md:text-3xl font-bold text-[#2D2A26] mb-3">그래도 고민이 된다면</p>
+            <p className="text-base md:text-lg font-semibold text-[#D68C82] mb-2">기획자가 직접 문의사항에 답해드려요!</p>
+            <p className="text-sm md:text-base text-[#6B6661] font-light">지금 화면 우측 채널톡 아이콘을 누르고 문의사항을 남겨주세요.</p>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
