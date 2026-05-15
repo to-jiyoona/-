@@ -845,7 +845,7 @@ export function LandingPage() {
             <p className="text-sm md:text-base font-bold text-[#B45309] mb-4">(중요) 환불 안내</p>
             <div className="space-y-4 text-sm md:text-base text-[#6B6661] font-light leading-relaxed">
               <p>초원 메이트는 소규모 정원제로 운영돼요.</p>
-              <p>한 분의 빈자리가 다른 참가자분들의 경험에 직접 영향을 주기 때문에, 결제일로부터 3일 이내에만 환불이 가능해요. 이후에는 사정이 생기더라도 환불이 어려우니, 일정을 충분히 확인하신 후 신청해 주세요.</p>
+              <p>한 분의 빈자리가 다른 참가자분들의 경험에 직접 영향을 주기 때문에, 결제시점으로부터 72시간 이내에만 환불이 가능해요. 이후에는 사정이 생기더라도 환불이 어려우니, 일정을 충분히 확인하신 후 신청해 주세요.</p>
               <p>신중하게 결정해 주신 만큼, 초원도 최선을 다해 준비할게요.</p>
             </div>
           </motion.div>
