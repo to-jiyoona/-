@@ -792,7 +792,7 @@ export function LandingPageV3() {
               신앙 안에서 진지한 관계를 고민하며
               <br />아름다운 만남을 이루고자 하는
               <strong className="text-[#4A7C6F] font-bold text-lg md:text-xl block mt-3 md:mt-4">
-                87~02년생 미혼인 초원성경앱 유저
+                87~02년생 미혼/초혼인 초원성경앱 유저
               </strong>
             </p>
           </motion.div>
