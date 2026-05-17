@@ -703,7 +703,11 @@ export function LandingPageV3() {
             className="w-full text-center mb-10"
           >
             <p className="text-2xl md:text-3xl font-bold text-[#2D2A26] mb-3">그래도 고민이 된다면</p>
-            <p className="text-base md:text-lg font-semibold text-[#4A7C6F] mb-2">기획자가 직접 문의사항에 답해드려요!</p>
+            <div className="flex justify-center mb-3">
+              <span className="inline-block bg-[#4A7C6F] text-white text-sm md:text-base font-semibold px-5 py-2 rounded-full">
+                기획자가 직접 문의사항에 답해드려요!
+              </span>
+            </div>
             <p className="text-sm md:text-base text-[#6B6661] font-light">지금 화면 우측 채널톡 아이콘을 누르고 문의사항을 남겨주세요.</p>
           </motion.div>
           <motion.div
